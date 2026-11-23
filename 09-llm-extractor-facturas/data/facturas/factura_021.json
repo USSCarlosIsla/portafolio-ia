@@ -1,0 +1,26 @@
+{
+  "numero_factura": "FE-89560",
+  "fecha_emision": "2024-10-30",
+  "proveedor_nombre": "Materiales Andinos Ltda.",
+  "proveedor_nit": "865809593",
+  "proveedor_dv": "8",
+  "cliente_nombre": "Juan Pérez Rodríguez",
+  "lineas": [
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 30.0,
+      "precio_unitario": 37000.0,
+      "total_linea": 1110000.0
+    },
+    {
+      "descripcion": "Mano de obra oficial (día)",
+      "cantidad": 22.0,
+      "precio_unitario": 141300.0,
+      "total_linea": 3108600.0
+    }
+  ],
+  "subtotal": 4218600.0,
+  "iva": 801534.0,
+  "total": 5020134.0,
+  "moneda": "COP"
+}

@@ -1,0 +1,44 @@
+{
+  "numero_factura": "FV-2751",
+  "fecha_emision": "2024-02-03",
+  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
+  "proveedor_nit": "864603074",
+  "proveedor_dv": "8",
+  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "lineas": [
+    {
+      "descripcion": "Arena lavada (m³)",
+      "cantidad": 23.0,
+      "precio_unitario": 98500.0,
+      "total_linea": 2265500.0
+    },
+    {
+      "descripcion": "Tubo PVC sanitario 4\"",
+      "cantidad": 3.0,
+      "precio_unitario": 62000.0,
+      "total_linea": 186000.0
+    },
+    {
+      "descripcion": "Mano de obra oficial (día)",
+      "cantidad": 30.0,
+      "precio_unitario": 132700.0,
+      "total_linea": 3981000.0
+    },
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 30.0,
+      "precio_unitario": 28400.0,
+      "total_linea": 852000.0
+    },
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 7.0,
+      "precio_unitario": 210900.0,
+      "total_linea": 1476300.0
+    }
+  ],
+  "subtotal": 8760800.0,
+  "iva": 1664552.0,
+  "total": 10425352.0,
+  "moneda": "COP"
+}

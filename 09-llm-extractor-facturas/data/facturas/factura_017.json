@@ -1,0 +1,26 @@
+{
+  "numero_factura": "F-94226",
+  "fecha_emision": "2025-04-26",
+  "proveedor_nombre": "Ferretería El Constructor S.A.S.",
+  "proveedor_nit": "843194605",
+  "proveedor_dv": "6",
+  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "lineas": [
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 17.0,
+      "precio_unitario": 249500.0,
+      "total_linea": 4241500.0
+    },
+    {
+      "descripcion": "Arena lavada (m³)",
+      "cantidad": 10.0,
+      "precio_unitario": 97400.0,
+      "total_linea": 974000.0
+    }
+  ],
+  "subtotal": 5215500.0,
+  "iva": 990945.0,
+  "total": 6206445.0,
+  "moneda": "COP"
+}

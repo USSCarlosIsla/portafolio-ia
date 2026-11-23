@@ -1,0 +1,38 @@
+{
+  "numero_factura": "F-61820",
+  "fecha_emision": "2024-04-03",
+  "proveedor_nombre": "Materiales Andinos Ltda.",
+  "proveedor_nit": "884930159",
+  "proveedor_dv": "1",
+  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "lineas": [
+    {
+      "descripcion": "Alquiler formaleta (día)",
+      "cantidad": 27.0,
+      "precio_unitario": 15100.0,
+      "total_linea": 407700.0
+    },
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 27.0,
+      "precio_unitario": 257700.0,
+      "total_linea": 6957900.0
+    },
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 21.0,
+      "precio_unitario": 35600.0,
+      "total_linea": 747600.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 14.0,
+      "precio_unitario": 169400.0,
+      "total_linea": 2371600.0
+    }
+  ],
+  "subtotal": 10484800.0,
+  "iva": 1992112.0,
+  "total": 12476912.0,
+  "moneda": "COP"
+}

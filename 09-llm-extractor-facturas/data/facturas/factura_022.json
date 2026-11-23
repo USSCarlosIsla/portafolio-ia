@@ -1,0 +1,26 @@
+{
+  "numero_factura": "FV-30201",
+  "fecha_emision": "2024-04-05",
+  "proveedor_nombre": "Eléctricos Volta Ltda.",
+  "proveedor_nit": "884827404",
+  "proveedor_dv": "1",
+  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "lineas": [
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 32.0,
+      "precio_unitario": 34100.0,
+      "total_linea": 1091200.0
+    },
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 2.0,
+      "precio_unitario": 214100.0,
+      "total_linea": 428200.0
+    }
+  ],
+  "subtotal": 1519400.0,
+  "iva": 288686.0,
+  "total": 1808086.0,
+  "moneda": "COP"
+}

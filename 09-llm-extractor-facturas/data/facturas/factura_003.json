@@ -1,0 +1,32 @@
+{
+  "numero_factura": "FE-10618",
+  "fecha_emision": "2025-07-07",
+  "proveedor_nombre": "Eléctricos Volta Ltda.",
+  "proveedor_nit": "838967366",
+  "proveedor_dv": "0",
+  "cliente_nombre": "Juan Pérez Rodríguez",
+  "lineas": [
+    {
+      "descripcion": "Ladrillo tolete (und)",
+      "cantidad": 500.0,
+      "precio_unitario": 800.0,
+      "total_linea": 400000.0
+    },
+    {
+      "descripcion": "Arena lavada (m³)",
+      "cantidad": 5.0,
+      "precio_unitario": 87900.0,
+      "total_linea": 439500.0
+    },
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 9.0,
+      "precio_unitario": 33200.0,
+      "total_linea": 298800.0
+    }
+  ],
+  "subtotal": 1138300.0,
+  "iva": 216277.0,
+  "total": 1354577.0,
+  "moneda": "COP"
+}

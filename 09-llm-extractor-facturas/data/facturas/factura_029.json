@@ -1,0 +1,50 @@
+{
+  "numero_factura": "F-99088",
+  "fecha_emision": "2024-07-19",
+  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
+  "proveedor_nit": "831187196",
+  "proveedor_dv": "2",
+  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "lineas": [
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 3.0,
+      "precio_unitario": 145000.0,
+      "total_linea": 435000.0
+    },
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 500.0,
+      "precio_unitario": 3200.0,
+      "total_linea": 1600000.0
+    },
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 34.0,
+      "precio_unitario": 36800.0,
+      "total_linea": 1251200.0
+    },
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 26.0,
+      "precio_unitario": 31600.0,
+      "total_linea": 821600.0
+    },
+    {
+      "descripcion": "Alquiler formaleta (día)",
+      "cantidad": 7.0,
+      "precio_unitario": 21100.0,
+      "total_linea": 147700.0
+    },
+    {
+      "descripcion": "Grava triturada (m³)",
+      "cantidad": 17.0,
+      "precio_unitario": 106600.0,
+      "total_linea": 1812200.0
+    }
+  ],
+  "subtotal": 6067700.0,
+  "iva": 1152863.0,
+  "total": 7220563.0,
+  "moneda": "COP"
+}

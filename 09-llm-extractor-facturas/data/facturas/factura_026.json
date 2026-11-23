@@ -1,0 +1,32 @@
+{
+  "numero_factura": "FE-17404",
+  "fecha_emision": "2025-03-06",
+  "proveedor_nombre": "Depósito La Roca S.A.S.",
+  "proveedor_nit": "831763590",
+  "proveedor_dv": "2",
+  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "lineas": [
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 100.0,
+      "precio_unitario": 2900.0,
+      "total_linea": 290000.0
+    },
+    {
+      "descripcion": "Grava triturada (m³)",
+      "cantidad": 39.0,
+      "precio_unitario": 95700.0,
+      "total_linea": 3732300.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 26.0,
+      "precio_unitario": 150100.0,
+      "total_linea": 3902600.0
+    }
+  ],
+  "subtotal": 7924900.0,
+  "iva": 1505731.0,
+  "total": 9430631.0,
+  "moneda": "COP"
+}

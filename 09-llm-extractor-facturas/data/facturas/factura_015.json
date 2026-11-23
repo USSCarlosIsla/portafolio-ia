@@ -1,0 +1,26 @@
+{
+  "numero_factura": "FV-47091",
+  "fecha_emision": "2024-04-27",
+  "proveedor_nombre": "Ferretería El Constructor S.A.S.",
+  "proveedor_nit": "856779209",
+  "proveedor_dv": "1",
+  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "lineas": [
+    {
+      "descripcion": "Grava triturada (m³)",
+      "cantidad": 17.0,
+      "precio_unitario": 114200.0,
+      "total_linea": 1941400.0
+    },
+    {
+      "descripcion": "Ladrillo tolete (und)",
+      "cantidad": 250.0,
+      "precio_unitario": 800.0,
+      "total_linea": 200000.0
+    }
+  ],
+  "subtotal": 2141400.0,
+  "iva": 406866.0,
+  "total": 2548266.0,
+  "moneda": "COP"
+}

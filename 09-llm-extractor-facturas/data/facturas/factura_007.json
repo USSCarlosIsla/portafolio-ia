@@ -1,0 +1,38 @@
+{
+  "numero_factura": "F-85157",
+  "fecha_emision": "2024-12-31",
+  "proveedor_nombre": "Aceros y Concretos del Norte S.A.",
+  "proveedor_nit": "821737107",
+  "proveedor_dv": "1",
+  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "lineas": [
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 12.0,
+      "precio_unitario": 210900.0,
+      "total_linea": 2530800.0
+    },
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 1000.0,
+      "precio_unitario": 3500.0,
+      "total_linea": 3500000.0
+    },
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 27.0,
+      "precio_unitario": 32700.0,
+      "total_linea": 882900.0
+    },
+    {
+      "descripcion": "Tubo PVC sanitario 4\"",
+      "cantidad": 33.0,
+      "precio_unitario": 67000.0,
+      "total_linea": 2211000.0
+    }
+  ],
+  "subtotal": 9124700.0,
+  "iva": 1733693.0,
+  "total": 10858393.0,
+  "moneda": "COP"
+}

@@ -1,0 +1,50 @@
+{
+  "numero_factura": "F-65431",
+  "fecha_emision": "2025-05-25",
+  "proveedor_nombre": "Eléctricos Volta Ltda.",
+  "proveedor_nit": "828976851",
+  "proveedor_dv": "3",
+  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "lineas": [
+    {
+      "descripcion": "Arena lavada (m³)",
+      "cantidad": 35.0,
+      "precio_unitario": 90000.0,
+      "total_linea": 3150000.0
+    },
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 7.0,
+      "precio_unitario": 32900.0,
+      "total_linea": 230300.0
+    },
+    {
+      "descripcion": "Ladrillo tolete (und)",
+      "cantidad": 1000.0,
+      "precio_unitario": 700.0,
+      "total_linea": 700000.0
+    },
+    {
+      "descripcion": "Tubo PVC sanitario 4\"",
+      "cantidad": 37.0,
+      "precio_unitario": 58600.0,
+      "total_linea": 2168200.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 28.0,
+      "precio_unitario": 179200.0,
+      "total_linea": 5017600.0
+    },
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 32.0,
+      "precio_unitario": 224500.0,
+      "total_linea": 7184000.0
+    }
+  ],
+  "subtotal": 18450100.0,
+  "iva": 3505519.0,
+  "total": 21955619.0,
+  "moneda": "COP"
+}

@@ -1,0 +1,50 @@
+{
+  "numero_factura": "FE-25143",
+  "fecha_emision": "2025-08-04",
+  "proveedor_nombre": "Materiales Andinos Ltda.",
+  "proveedor_nit": "827444538",
+  "proveedor_dv": "6",
+  "cliente_nombre": "Inversiones Altamira",
+  "lineas": [
+    {
+      "descripcion": "Tubo PVC sanitario 4\"",
+      "cantidad": 36.0,
+      "precio_unitario": 67000.0,
+      "total_linea": 2412000.0
+    },
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 1.0,
+      "precio_unitario": 186100.0,
+      "total_linea": 186100.0
+    },
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 26.0,
+      "precio_unitario": 256500.0,
+      "total_linea": 6669000.0
+    },
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 100.0,
+      "precio_unitario": 3400.0,
+      "total_linea": 340000.0
+    },
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 32.0,
+      "precio_unitario": 34700.0,
+      "total_linea": 1110400.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 16.0,
+      "precio_unitario": 166300.0,
+      "total_linea": 2660800.0
+    }
+  ],
+  "subtotal": 13378300.0,
+  "iva": 2541877.0,
+  "total": 15920177.0,
+  "moneda": "COP"
+}

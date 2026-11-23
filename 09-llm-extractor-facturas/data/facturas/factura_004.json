@@ -1,0 +1,38 @@
+{
+  "numero_factura": "F-15453",
+  "fecha_emision": "2024-08-13",
+  "proveedor_nombre": "Depósito La Roca S.A.S.",
+  "proveedor_nit": "866123086",
+  "proveedor_dv": "3",
+  "cliente_nombre": "Inversiones Altamira",
+  "lineas": [
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 32.0,
+      "precio_unitario": 32800.0,
+      "total_linea": 1049600.0
+    },
+    {
+      "descripcion": "Grava triturada (m³)",
+      "cantidad": 22.0,
+      "precio_unitario": 122700.0,
+      "total_linea": 2699400.0
+    },
+    {
+      "descripcion": "Mano de obra oficial (día)",
+      "cantidad": 13.0,
+      "precio_unitario": 128000.0,
+      "total_linea": 1664000.0
+    },
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 2.0,
+      "precio_unitario": 227900.0,
+      "total_linea": 455800.0
+    }
+  ],
+  "subtotal": 5868800.0,
+  "iva": 1115072.0,
+  "total": 6983872.0,
+  "moneda": "COP"
+}

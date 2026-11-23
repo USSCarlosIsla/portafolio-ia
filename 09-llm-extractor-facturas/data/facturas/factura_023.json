@@ -1,0 +1,26 @@
+{
+  "numero_factura": "FE-58652",
+  "fecha_emision": "2025-03-17",
+  "proveedor_nombre": "Eléctricos Volta Ltda.",
+  "proveedor_nit": "856647466",
+  "proveedor_dv": "1",
+  "cliente_nombre": "Juan Pérez Rodríguez",
+  "lineas": [
+    {
+      "descripcion": "Varilla corrugada 1/2\" x 6 m",
+      "cantidad": 5.0,
+      "precio_unitario": 28800.0,
+      "total_linea": 144000.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 27.0,
+      "precio_unitario": 155200.0,
+      "total_linea": 4190400.0
+    }
+  ],
+  "subtotal": 4334400.0,
+  "iva": 823536.0,
+  "total": 5157936.0,
+  "moneda": "COP"
+}

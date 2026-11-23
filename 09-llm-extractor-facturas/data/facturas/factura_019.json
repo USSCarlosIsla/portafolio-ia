@@ -1,0 +1,32 @@
+{
+  "numero_factura": "F-53586",
+  "fecha_emision": "2025-01-28",
+  "proveedor_nombre": "Aceros y Concretos del Norte S.A.",
+  "proveedor_nit": "800032305",
+  "proveedor_dv": "0",
+  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "lineas": [
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 500.0,
+      "precio_unitario": 3100.0,
+      "total_linea": 1550000.0
+    },
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 5.0,
+      "precio_unitario": 242300.0,
+      "total_linea": 1211500.0
+    },
+    {
+      "descripcion": "Mano de obra oficial (día)",
+      "cantidad": 17.0,
+      "precio_unitario": 147000.0,
+      "total_linea": 2499000.0
+    }
+  ],
+  "subtotal": 5260500.0,
+  "iva": 999495.0,
+  "total": 6259995.0,
+  "moneda": "COP"
+}

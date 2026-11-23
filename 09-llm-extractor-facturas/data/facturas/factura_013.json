@@ -1,0 +1,44 @@
+{
+  "numero_factura": "SETT-62228",
+  "fecha_emision": "2024-12-11",
+  "proveedor_nombre": "Depósito La Roca S.A.S.",
+  "proveedor_nit": "815421135",
+  "proveedor_dv": "9",
+  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "lineas": [
+    {
+      "descripcion": "Impermeabilizante 5 gal",
+      "cantidad": 34.0,
+      "precio_unitario": 227800.0,
+      "total_linea": 7745200.0
+    },
+    {
+      "descripcion": "Ladrillo tolete (und)",
+      "cantidad": 100.0,
+      "precio_unitario": 700.0,
+      "total_linea": 70000.0
+    },
+    {
+      "descripcion": "Cemento gris 50 kg",
+      "cantidad": 26.0,
+      "precio_unitario": 34700.0,
+      "total_linea": 902200.0
+    },
+    {
+      "descripcion": "Bloque de concreto 15 cm",
+      "cantidad": 500.0,
+      "precio_unitario": 3200.0,
+      "total_linea": 1600000.0
+    },
+    {
+      "descripcion": "Arena lavada (m³)",
+      "cantidad": 7.0,
+      "precio_unitario": 88300.0,
+      "total_linea": 618100.0
+    }
+  ],
+  "subtotal": 10935500.0,
+  "iva": 2077745.0,
+  "total": 13013245.0,
+  "moneda": "COP"
+}

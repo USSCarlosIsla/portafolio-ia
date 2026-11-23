@@ -1,0 +1,26 @@
+{
+  "numero_factura": "FV-39738",
+  "fecha_emision": "2024-10-13",
+  "proveedor_nombre": "Eléctricos Volta Ltda.",
+  "proveedor_nit": "896277616",
+  "proveedor_dv": "7",
+  "cliente_nombre": "Inversiones Altamira",
+  "lineas": [
+    {
+      "descripcion": "Alquiler formaleta (día)",
+      "cantidad": 40.0,
+      "precio_unitario": 15800.0,
+      "total_linea": 632000.0
+    },
+    {
+      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "cantidad": 13.0,
+      "precio_unitario": 217800.0,
+      "total_linea": 2831400.0
+    }
+  ],
+  "subtotal": 3463400.0,
+  "iva": 658046.0,
+  "total": 4121446.0,
+  "moneda": "COP"
+}

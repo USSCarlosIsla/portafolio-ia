@@ -1,0 +1,32 @@
+{
+  "numero_factura": "F-48229",
+  "fecha_emision": "2024-04-05",
+  "proveedor_nombre": "Depósito La Roca S.A.S.",
+  "proveedor_nit": "872199579",
+  "proveedor_dv": "0",
+  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "lineas": [
+    {
+      "descripcion": "Ladrillo tolete (und)",
+      "cantidad": 500.0,
+      "precio_unitario": 700.0,
+      "total_linea": 350000.0
+    },
+    {
+      "descripcion": "Malla electrosoldada 6 m",
+      "cantidad": 9.0,
+      "precio_unitario": 154900.0,
+      "total_linea": 1394100.0
+    },
+    {
+      "descripcion": "Mano de obra oficial (día)",
+      "cantidad": 18.0,
+      "precio_unitario": 130900.0,
+      "total_linea": 2356200.0
+    }
+  ],
+  "subtotal": 4100300.0,
+  "iva": 779057.0,
+  "total": 4879357.0,
+  "moneda": "COP"
+}
