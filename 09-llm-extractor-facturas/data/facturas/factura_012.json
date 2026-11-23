@@ -1,32 +1,39 @@
 {
-  "numero_factura": "F-48229",
-  "fecha_emision": "2024-04-05",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "872199579",
-  "proveedor_dv": "0",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "FA01",
+  "correlativo": "00013801",
+  "fecha_emision": "2027-07-17",
+  "emisor_ruc": "20536710974",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "10519426418",
+  "cliente_razon_social": "Arquitectura & Diseño E.I.R.L.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Ladrillo tolete (und)",
-      "cantidad": 500.0,
-      "precio_unitario": 700.0,
-      "total_linea": 350000.0
+      "descripcion": "Hormigón",
+      "cantidad": 25.0,
+      "valor_unitario": 58.56,
+      "valor_venta": 1464.0
     },
     {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 9.0,
-      "precio_unitario": 154900.0,
-      "total_linea": 1394100.0
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 7.0,
+      "valor_unitario": 30.84,
+      "valor_venta": 215.88
     },
     {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 18.0,
-      "precio_unitario": 130900.0,
-      "total_linea": 2356200.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 10.0,
+      "valor_unitario": 6.48,
+      "valor_venta": 64.8
+    },
+    {
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 39.0,
+      "valor_unitario": 6.18,
+      "valor_venta": 241.02
     }
   ],
-  "subtotal": 4100300.0,
-  "iva": 779057.0,
-  "total": 4879357.0,
-  "moneda": "COP"
+  "op_gravada": 1985.7,
+  "igv": 357.43,
+  "importe_total": 2343.13
 }

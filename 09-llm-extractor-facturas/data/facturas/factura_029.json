@@ -1,50 +1,39 @@
 {
-  "numero_factura": "F-99088",
-  "fecha_emision": "2024-07-19",
-  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
-  "proveedor_nit": "831187196",
-  "proveedor_dv": "2",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "F002",
+  "correlativo": "00075981",
+  "fecha_emision": "2026-04-23",
+  "emisor_ruc": "20889664445",
+  "emisor_razon_social": "Ferretería El Constructor S.A.C.",
+  "cliente_ruc": "20448885535",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 3.0,
-      "precio_unitario": 145000.0,
-      "total_linea": 435000.0
+      "descripcion": "Clavos para madera c/c 3\"",
+      "cantidad": 36.0,
+      "valor_unitario": 6.43,
+      "valor_venta": 231.48
     },
     {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 500.0,
-      "precio_unitario": 3200.0,
-      "total_linea": 1600000.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 18.0,
+      "valor_unitario": 7.3,
+      "valor_venta": 131.4
     },
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 34.0,
-      "precio_unitario": 36800.0,
-      "total_linea": 1251200.0
+      "descripcion": "Arena fina",
+      "cantidad": 12.0,
+      "valor_unitario": 56.04,
+      "valor_venta": 672.48
     },
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 26.0,
-      "precio_unitario": 31600.0,
-      "total_linea": 821600.0
-    },
-    {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 7.0,
-      "precio_unitario": 21100.0,
-      "total_linea": 147700.0
-    },
-    {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 17.0,
-      "precio_unitario": 106600.0,
-      "total_linea": 1812200.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 100.0,
+      "valor_unitario": 4.4,
+      "valor_venta": 440.0
     }
   ],
-  "subtotal": 6067700.0,
-  "iva": 1152863.0,
-  "total": 7220563.0,
-  "moneda": "COP"
+  "op_gravada": 1475.36,
+  "igv": 265.56,
+  "importe_total": 1740.92
 }

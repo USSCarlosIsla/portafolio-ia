@@ -30,7 +30,7 @@ y guardan sus gráficas en una carpeta `outputs/` junto al script.
 | 06 | Aprendizaje continuo | [Olvido catastrófico](06-aprendizaje-continuo/) | Tareas secuenciales, replay buffer, aprendizaje online | ✅ |
 | 07 | Visión / OCR | [OCR de dígitos](07-ocr/) | Segmentación con OpenCV + CNN reconocedora | ✅ |
 | 08 | Modelos predictivos | [Pronóstico de ventas a 28 días](08-series-temporales/) | Lags sin fuga, backtesting walk-forward, LSTM, intervalos | ✅ |
-| 09 | LLMs + API | [Extractor de facturas](09-llm-extractor-facturas/) | Visión + salida estructurada, validación, autocorrección, FastAPI, Docker | ✅ |
+| 09 | LLMs + API | [Extractor de facturas electrónicas (Perú)](09-llm-extractor-facturas/) | Visión + salida estructurada, validación RUC/IGV SUNAT, autocorrección, FastAPI, Docker | ✅ |
 | 10 | Proyecto integrador | [Cotizador y valorizaciones de obras (Perú) + API](10-cotizador-obras/) | APU, modelo de precios entrenado, LLM que interpreta, fórmula polinómica, valorizaciones con alertas, API para automatización | ✅ |
 
 ## Orden de estudio recomendado

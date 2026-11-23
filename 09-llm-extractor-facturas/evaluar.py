@@ -19,8 +19,8 @@ from esquema import Factura
 BASE = Path(__file__).resolve().parent
 DATA = BASE / "data" / "facturas"
 OUT = BASE / "outputs"
-CAMPOS = ["numero_factura", "fecha_emision", "proveedor_nombre", "proveedor_nit", "proveedor_dv",
-          "cliente_nombre", "subtotal", "iva", "total"]
+CAMPOS = ["serie", "correlativo", "fecha_emision", "emisor_ruc", "emisor_razon_social", "cliente_ruc",
+          "cliente_razon_social", "moneda", "op_gravada", "igv", "importe_total"]
 
 
 def norm_texto(s):
@@ -31,15 +31,15 @@ def norm_texto(s):
 def igual(campo, real, pred):
     if pred is None:
         return False
-    if campo in ("subtotal", "iva", "total"):
-        return abs(float(real) - float(pred)) < 1
+    if campo in ("op_gravada", "igv", "importe_total"):
+        return abs(float(real) - float(pred)) < 0.02
     return norm_texto(real) == norm_texto(pred)
 
 
 def lineas_correctas(real, pred):
     if len(real) != len(pred):
         return False
-    return all(abs(r["total_linea"] - p["total_linea"]) < 1 and abs(r["cantidad"] - p["cantidad"]) < 1e-6
+    return all(abs(r["valor_venta"] - p["valor_venta"]) < 0.02 and abs(r["cantidad"] - p["cantidad"]) < 1e-6
                for r, p in zip(real, pred))
 
 

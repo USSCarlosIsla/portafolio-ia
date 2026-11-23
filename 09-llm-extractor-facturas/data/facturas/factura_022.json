@@ -1,26 +1,39 @@
 {
-  "numero_factura": "FV-30201",
-  "fecha_emision": "2024-04-05",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "884827404",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "F001",
+  "correlativo": "00010680",
+  "fecha_emision": "2026-09-04",
+  "emisor_ruc": "20126379162",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "20023732450",
+  "cliente_razon_social": "Consorcio Vial Lima Norte",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 32.0,
-      "precio_unitario": 34100.0,
-      "total_linea": 1091200.0
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 1000.0,
+      "valor_unitario": 1.2,
+      "valor_venta": 1200.0
     },
     {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 2.0,
-      "precio_unitario": 214100.0,
-      "total_linea": 428200.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 100.0,
+      "valor_unitario": 4.54,
+      "valor_venta": 454.0
+    },
+    {
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 27.0,
+      "valor_unitario": 32.86,
+      "valor_venta": 887.22
+    },
+    {
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 30.0,
+      "valor_unitario": 6.04,
+      "valor_venta": 181.2
     }
   ],
-  "subtotal": 1519400.0,
-  "iva": 288686.0,
-  "total": 1808086.0,
-  "moneda": "COP"
+  "op_gravada": 2722.42,
+  "igv": 490.04,
+  "importe_total": 3212.46
 }

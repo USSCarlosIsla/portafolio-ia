@@ -1,26 +1,45 @@
 {
-  "numero_factura": "F-9342",
-  "fecha_emision": "2024-05-26",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "892848489",
-  "proveedor_dv": "4",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "F002",
+  "correlativo": "00082443",
+  "fecha_emision": "2027-05-26",
+  "emisor_ruc": "20190895778",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "20382778511",
+  "cliente_razon_social": "Consorcio Vial Lima Norte",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 12.0,
-      "precio_unitario": 95300.0,
-      "total_linea": 1143600.0
+      "descripcion": "Arena gruesa",
+      "cantidad": 49.0,
+      "valor_unitario": 60.56,
+      "valor_venta": 2967.44
     },
     {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 15.0,
-      "precio_unitario": 233700.0,
-      "total_linea": 3505500.0
+      "descripcion": "Imprimante para muros",
+      "cantidad": 59.0,
+      "valor_unitario": 23.12,
+      "valor_venta": 1364.08
+    },
+    {
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 250.0,
+      "valor_unitario": 1.13,
+      "valor_venta": 282.5
+    },
+    {
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 250.0,
+      "valor_unitario": 4.49,
+      "valor_venta": 1122.5
+    },
+    {
+      "descripcion": "Pintura látex",
+      "cantidad": 49.0,
+      "valor_unitario": 48.0,
+      "valor_venta": 2352.0
     }
   ],
-  "subtotal": 4649100.0,
-  "iva": 883329.0,
-  "total": 5532429.0,
-  "moneda": "COP"
+  "op_gravada": 8088.52,
+  "igv": 1455.93,
+  "importe_total": 9544.45
 }

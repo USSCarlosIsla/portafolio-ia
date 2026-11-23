@@ -1,9 +1,9 @@
-"""Extractor de facturas con Claude (visión + salida estructurada + autocorrección).
+"""Extractor de facturas electrónicas peruanas con Claude (visión + salida estructurada + autocorrección).
 
 Flujo:
   1. Se envía la IMAGEN de la factura a Claude, pidiendo una salida que cumpla el esquema `Factura`
      (Pydantic). El SDK valida la respuesta: si no cumple el esquema, falla en vez de devolver basura.
-  2. Se aplican reglas de negocio (sumas, IVA, dígito de verificación del NIT).
+  2. Se aplican reglas de negocio (dígito verificador del RUC, formato de serie, IGV 18%, sumas).
   3. Si alguna regla falla, se le devuelven los errores a Claude para que revise la imagen y corrija
      (hasta MAX_CORRECCIONES veces). Si sigue fallando, la factura se marca para revisión humana.
 
@@ -29,15 +29,20 @@ MODEL = "claude-opus-5-5"
 PRECIO_INPUT, PRECIO_OUTPUT = 4.00, 20.00  # USD por millón de tokens (Claude Opus 5.5)
 MAX_CORRECCIONES = 2
 
-SYSTEM = """Eres un sistema de extracción de datos de facturas de proveedores colombianos.
-Lee la imagen y devuelve los datos EXACTAMENTE como aparecen, normalizados así:
-- Fechas en formato ISO AAAA-MM-DD, sin importar cómo estén escritas.
-- Montos como números simples: "$ 1.234.567" y "$1,234,567.00" son 1234567. En Colombia el punto suele
-  separar miles y la coma los decimales; deduce el formato por el contexto de toda la factura.
-- NIT: solo los dígitos antes del guion en `proveedor_nit`; el dígito tras el guion en `proveedor_dv`.
-- `iva` es el VALOR del impuesto en dinero, no el porcentaje.
-- Incluye TODAS las líneas de productos o servicios, en el orden en que aparecen.
-Si un dato no se lee con claridad, da tu mejor lectura: luego se validará con reglas aritméticas."""
+SYSTEM = """Eres un sistema de extracción de datos de facturas electrónicas peruanas (SUNAT).
+Lee la representación impresa y devuelve los datos EXACTAMENTE como aparecen, normalizados así:
+- `serie` (p. ej. F001, E001) y `correlativo` (p. ej. 00012345) por separado, sin el guion.
+- `emisor_ruc` es el RUC del PROVEEDOR (suele estar en el recuadro con "FACTURA ELECTRÓNICA");
+  `cliente_ruc` es el del adquiriente ("Señor(es)", "Cliente"). Solo los 11 dígitos, sin puntos ni espacios.
+- Fechas en formato ISO AAAA-MM-DD ("17-set-2027" es 2027-09-17).
+- Montos como números simples: "S/ 1,234.56" y "S/. 1234.56" son 1234.56.
+- `moneda`: PEN si está en soles (S/, "SOLES"), USD si está en dólares (US$, "DÓLARES").
+- `op_gravada` es la base sin IGV (puede decir "OP. GRAVADA", "Valor de venta", "SUBTOTAL");
+  `igv` es el monto del impuesto en dinero, no el porcentaje.
+- En cada línea, `valor_unitario` y `valor_venta` van SIN IGV.
+- Incluye TODAS las líneas, en el orden en que aparecen.
+Si un dato no se lee con claridad, da tu mejor lectura: luego se validará con el dígito verificador
+del RUC y con reglas aritméticas."""
 
 
 @dataclass

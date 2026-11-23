@@ -1,50 +1,45 @@
 {
-  "numero_factura": "FE-25143",
-  "fecha_emision": "2025-08-04",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "827444538",
-  "proveedor_dv": "6",
-  "cliente_nombre": "Inversiones Altamira",
+  "serie": "E001",
+  "correlativo": "00014295",
+  "fecha_emision": "2026-11-05",
+  "emisor_ruc": "20841858396",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "10471965931",
+  "cliente_razon_social": "Consorcio Vial Lima Norte",
+  "moneda": "USD",
   "lineas": [
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 36.0,
-      "precio_unitario": 67000.0,
-      "total_linea": 2412000.0
+      "descripcion": "Imprimante para muros",
+      "cantidad": 13.0,
+      "valor_unitario": 6.27,
+      "valor_venta": 81.51
     },
     {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 1.0,
-      "precio_unitario": 186100.0,
-      "total_linea": 186100.0
+      "descripcion": "Piedra grande de 8\"",
+      "cantidad": 15.0,
+      "valor_unitario": 15.7,
+      "valor_venta": 235.5
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 26.0,
-      "precio_unitario": 256500.0,
-      "total_linea": 6669000.0
+      "descripcion": "Arena fina",
+      "cantidad": 10.0,
+      "valor_unitario": 15.46,
+      "valor_venta": 154.6
     },
     {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 100.0,
-      "precio_unitario": 3400.0,
-      "total_linea": 340000.0
+      "descripcion": "Pintura látex",
+      "cantidad": 29.0,
+      "valor_unitario": 12.31,
+      "valor_venta": 356.99
     },
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 32.0,
-      "precio_unitario": 34700.0,
-      "total_linea": 1110400.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 16.0,
-      "precio_unitario": 166300.0,
-      "total_linea": 2660800.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 500.0,
+      "valor_unitario": 1.21,
+      "valor_venta": 605.0
     }
   ],
-  "subtotal": 13378300.0,
-  "iva": 2541877.0,
-  "total": 15920177.0,
-  "moneda": "COP"
+  "op_gravada": 1433.6,
+  "igv": 258.05,
+  "importe_total": 1691.65
 }

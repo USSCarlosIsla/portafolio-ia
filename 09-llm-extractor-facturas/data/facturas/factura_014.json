@@ -1,32 +1,27 @@
 {
-  "numero_factura": "SETT-1129",
-  "fecha_emision": "2024-04-10",
-  "proveedor_nombre": "Aceros y Concretos del Norte S.A.",
-  "proveedor_nit": "820892881",
-  "proveedor_dv": "3",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "F002",
+  "correlativo": "00047947",
+  "fecha_emision": "2026-03-14",
+  "emisor_ruc": "20923031040",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "10093227170",
+  "cliente_razon_social": "Consorcio Vial Lima Norte",
+  "moneda": "USD",
   "lineas": [
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 6.0,
-      "precio_unitario": 15500.0,
-      "total_linea": 93000.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 100.0,
+      "valor_unitario": 1.13,
+      "valor_venta": 113.0
     },
     {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 6.0,
-      "precio_unitario": 126500.0,
-      "total_linea": 759000.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 15.0,
-      "precio_unitario": 149000.0,
-      "total_linea": 2235000.0
+      "descripcion": "Piedra grande de 8\"",
+      "cantidad": 12.0,
+      "valor_unitario": 15.22,
+      "valor_venta": 182.64
     }
   ],
-  "subtotal": 3087000.0,
-  "iva": 586530.0,
-  "total": 3673530.0,
-  "moneda": "COP"
+  "op_gravada": 295.64,
+  "igv": 53.22,
+  "importe_total": 348.86
 }

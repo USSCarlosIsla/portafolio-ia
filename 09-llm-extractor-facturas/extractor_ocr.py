@@ -1,8 +1,8 @@
 """Baseline SIN LLM: OCR clásico (RapidOCR, corre local y gratis) + reglas con expresiones regulares.
 
 Sirve para responder la pregunta que hará cualquier entrevistador: "¿de verdad necesitas un LLM?".
-Las reglas funcionan bien con un formato conocido, pero cada diseño, etiqueta o formato de número
-nuevo exige escribir otra regla. No extrae las líneas de productos (haría falta reconstruir la tabla).
+Las reglas funcionan con formatos conocidos, pero cada diseño, etiqueta o formato nuevo exige escribir
+otra regla. No extrae las líneas de productos (haría falta reconstruir la tabla).
 """
 import re
 import unicodedata
@@ -11,9 +11,10 @@ from datetime import date
 from rapidocr_onnxruntime import RapidOCR
 
 _ocr = None
-MESES = {m: i for i, m in enumerate(["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct",
+MESES = {m: i for i, m in enumerate(["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "set", "oct",
                                      "nov", "dic"], 1)}
-DINERO = r"\$\s?[\d.,]+\d"
+MESES["sep"] = 9
+DINERO = r"(?:S/\.?|US\$)\s?\d[\d,]*\.\d{2}"
 
 
 def _sin_tildes(s):
@@ -21,10 +22,7 @@ def _sin_tildes(s):
 
 
 def parse_dinero(s):
-    s = re.sub(r"[^\d.,]", "", s)
-    if re.fullmatch(r"\d{1,3}(\.\d{3})+(,\d{1,2})?|\d+,\d{1,2}", s):  # 1.234.567,00 (Colombia)
-        return float(s.replace(".", "").replace(",", "."))
-    return float(s.replace(",", ""))  # 1,234,567.00 o 1234567
+    return float(re.sub(r"[^\d.]", "", re.sub(r"^(S/\.?|US\$)", "", s.strip())))
 
 
 def parse_fecha(t):
@@ -33,9 +31,8 @@ def parse_fecha(t):
         return date(int(m[1]), int(m[2]), int(m[3]))
     if m := re.search(r"(\d{2})/(\d{2})/(\d{4})", t):
         return date(int(m[3]), int(m[2]), int(m[1]))
-    if m := re.search(r"(\d{1,2})\s*-?\s*(?:de)?\s*([a-z]{3})[a-z]*\s*-?\s*(?:de)?\s*(\d{4})", t):
-        if m[2] in MESES:
-            return date(int(m[3]), MESES[m[2]], int(m[1]))
+    if (m := re.search(r"(\d{1,2})-([a-z]{3})-(\d{4})", t)) and m[2] in MESES:
+        return date(int(m[3]), MESES[m[2]], int(m[1]))
     return None
 
 
@@ -43,7 +40,8 @@ def leer_cajas(path):
     global _ocr
     _ocr = _ocr or RapidOCR()
     res, _ = _ocr(str(path))
-    return [(b[0][0], b[0][1], txt) for b, txt, _conf in (res or [])]
+    cajas = [(b[0][0], b[0][1], txt) for b, txt, _conf in (res or [])]
+    return sorted(cajas, key=lambda c: (round(c[1] / 15), c[0]))  # orden de lectura aproximado
 
 
 def valor_de_etiqueta(cajas, patron):
@@ -63,16 +61,18 @@ def extraer_factura_ocr(path):
     cajas = leer_cajas(path)
     texto = "\n".join(t for _, _, t in cajas)
     plano = _sin_tildes(texto).replace(" ", "")
-    out = {"proveedor_nombre": cajas[0][2] if cajas else None}
+    out = {"emisor_razon_social": next((t for _, _, t in cajas if not re.search(r"\d{6}", t)), None)}
 
-    if m := re.search(r"N\.?I\.?T\.?:?([\d.]+)-(\d)", plano):
-        out["proveedor_nit"], out["proveedor_dv"] = m[1].replace(".", ""), m[2]
-    if m := re.search(r"(?:No\.|N°|FACTURA)((?:FE|FV|F|SETT)-\d+)", plano):
-        out["numero_factura"] = m[1]
-    if m := re.search(r"(?:Cliente|Senores|CLIENTE):\s*(.+)", _sin_tildes(texto)):
-        out["cliente_nombre"] = m[1].strip()
+    rucs = re.findall(r"(?<!\d)((?:10|15|16|17|20)\d{9})(?!\d)", plano)  # el 1.º es el emisor (recuadro)
+    out["emisor_ruc"] = rucs[0] if rucs else None
+    out["cliente_ruc"] = rucs[1] if len(rucs) > 1 else None
+    if m := re.search(r"([FE][A-Z0-9]{3})-(\d{1,8})(?!\d)", plano):
+        out["serie"], out["correlativo"] = m[1], m[2]
+    if m := re.search(r"(?:Senor\(es\)|Cliente|CLIENTE):\s*(.+)", _sin_tildes(texto)):
+        out["cliente_razon_social"] = m[1].strip()
+    out["moneda"] = "USD" if re.search(r"US\$|DOLARES|USD", plano.upper()) else "PEN"
     out["fecha_emision"] = next((f for line in texto.splitlines() if (f := parse_fecha(line))), None)
-    out["subtotal"] = valor_de_etiqueta(cajas, r"subtotal|valorbruto")
-    out["iva"] = valor_de_etiqueta(cajas, r"^iva|impuesto")
-    out["total"] = valor_de_etiqueta(cajas, r"totalapagar|valorneto|^total")
+    out["op_gravada"] = valor_de_etiqueta(cajas, r"op\.?gravada|valordeventa|subtotal")
+    out["igv"] = valor_de_etiqueta(cajas, r"^i\.?g\.?v")
+    out["importe_total"] = valor_de_etiqueta(cajas, r"importetotal|totalapagar|^total")
     return out

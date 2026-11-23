@@ -1,44 +1,45 @@
 {
-  "numero_factura": "F-69904",
-  "fecha_emision": "2024-05-30",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "851706749",
-  "proveedor_dv": "6",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "F001",
+  "correlativo": "00081051",
+  "fecha_emision": "2026-09-14",
+  "emisor_ruc": "20892411574",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "20565938771",
+  "cliente_razon_social": "Arquitectura & Diseño E.I.R.L.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Cemento gris 50 kg",
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 59.0,
+      "valor_unitario": 32.08,
+      "valor_venta": 1892.72
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
       "cantidad": 20.0,
-      "precio_unitario": 35900.0,
-      "total_linea": 718000.0
+      "valor_unitario": 83.91,
+      "valor_venta": 1678.2
     },
     {
-      "descripcion": "Bloque de concreto 15 cm",
+      "descripcion": "Ladrillo King Kong 18 huecos",
       "cantidad": 500.0,
-      "precio_unitario": 3400.0,
-      "total_linea": 1700000.0
+      "valor_unitario": 1.18,
+      "valor_venta": 590.0
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 14.0,
-      "precio_unitario": 243100.0,
-      "total_linea": 3403400.0
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 59.0,
+      "valor_unitario": 5.87,
+      "valor_venta": 346.33
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
+      "descripcion": "Hormigón",
       "cantidad": 9.0,
-      "precio_unitario": 56600.0,
-      "total_linea": 509400.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 9.0,
-      "precio_unitario": 151200.0,
-      "total_linea": 1360800.0
+      "valor_unitario": 57.23,
+      "valor_venta": 515.07
     }
   ],
-  "subtotal": 7691600.0,
-  "iva": 1461404.0,
-  "total": 9153004.0,
-  "moneda": "COP"
+  "op_gravada": 5022.32,
+  "igv": 904.02,
+  "importe_total": 5926.34
 }

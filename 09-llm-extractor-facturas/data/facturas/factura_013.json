@@ -1,44 +1,27 @@
 {
-  "numero_factura": "SETT-62228",
-  "fecha_emision": "2024-12-11",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "815421135",
-  "proveedor_dv": "9",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "F002",
+  "correlativo": "00030102",
+  "fecha_emision": "2026-04-06",
+  "emisor_ruc": "20886841265",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "20116116201",
+  "cliente_razon_social": "Edificaciones Modernas S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Impermeabilizante 5 gal",
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 58.0,
+      "valor_unitario": 5.72,
+      "valor_venta": 331.76
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
       "cantidad": 34.0,
-      "precio_unitario": 227800.0,
-      "total_linea": 7745200.0
-    },
-    {
-      "descripcion": "Ladrillo tolete (und)",
-      "cantidad": 100.0,
-      "precio_unitario": 700.0,
-      "total_linea": 70000.0
-    },
-    {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 26.0,
-      "precio_unitario": 34700.0,
-      "total_linea": 902200.0
-    },
-    {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 500.0,
-      "precio_unitario": 3200.0,
-      "total_linea": 1600000.0
-    },
-    {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 7.0,
-      "precio_unitario": 88300.0,
-      "total_linea": 618100.0
+      "valor_unitario": 80.86,
+      "valor_venta": 2749.24
     }
   ],
-  "subtotal": 10935500.0,
-  "iva": 2077745.0,
-  "total": 13013245.0,
-  "moneda": "COP"
+  "op_gravada": 3081.0,
+  "igv": 554.58,
+  "importe_total": 3635.58
 }

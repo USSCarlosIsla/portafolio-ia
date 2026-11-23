@@ -1,26 +1,33 @@
 {
-  "numero_factura": "FE-89560",
-  "fecha_emision": "2024-10-30",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "865809593",
-  "proveedor_dv": "8",
-  "cliente_nombre": "Juan Pérez Rodríguez",
+  "serie": "FA01",
+  "correlativo": "00079734",
+  "fecha_emision": "2026-04-15",
+  "emisor_ruc": "20915587543",
+  "emisor_razon_social": "Ferretería El Constructor S.A.C.",
+  "cliente_ruc": "10035138531",
+  "cliente_razon_social": "Inversiones Altamira S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 30.0,
-      "precio_unitario": 37000.0,
-      "total_linea": 1110000.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 250.0,
+      "valor_unitario": 4.57,
+      "valor_venta": 1142.5
     },
     {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 22.0,
-      "precio_unitario": 141300.0,
-      "total_linea": 3108600.0
+      "descripcion": "Pintura látex",
+      "cantidad": 26.0,
+      "valor_unitario": 49.08,
+      "valor_venta": 1276.08
+    },
+    {
+      "descripcion": "Hormigón",
+      "cantidad": 15.0,
+      "valor_unitario": 58.52,
+      "valor_venta": 877.8
     }
   ],
-  "subtotal": 4218600.0,
-  "iva": 801534.0,
-  "total": 5020134.0,
-  "moneda": "COP"
+  "op_gravada": 3296.38,
+  "igv": 593.35,
+  "importe_total": 3889.73
 }

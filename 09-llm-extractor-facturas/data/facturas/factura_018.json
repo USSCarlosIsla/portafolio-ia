@@ -1,38 +1,33 @@
 {
-  "numero_factura": "FE-98006",
-  "fecha_emision": "2025-03-12",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "860208609",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Consorcio Vial 2024",
+  "serie": "F002",
+  "correlativo": "00020588",
+  "fecha_emision": "2026-05-07",
+  "emisor_ruc": "20166972842",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "10763778571",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 33.0,
-      "precio_unitario": 97500.0,
-      "total_linea": 3217500.0
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 1000.0,
+      "valor_unitario": 1.2,
+      "valor_venta": 1200.0
     },
     {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 34.0,
-      "precio_unitario": 212900.0,
-      "total_linea": 7238600.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 500.0,
+      "valor_unitario": 4.2,
+      "valor_venta": 2100.0
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 3.0,
-      "precio_unitario": 61400.0,
-      "total_linea": 184200.0
-    },
-    {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 6.0,
-      "precio_unitario": 117200.0,
-      "total_linea": 703200.0
+      "descripcion": "Hormigón",
+      "cantidad": 24.0,
+      "valor_unitario": 59.38,
+      "valor_venta": 1425.12
     }
   ],
-  "subtotal": 11343500.0,
-  "iva": 2155265.0,
-  "total": 13498765.0,
-  "moneda": "COP"
+  "op_gravada": 4725.12,
+  "igv": 850.52,
+  "importe_total": 5575.64
 }

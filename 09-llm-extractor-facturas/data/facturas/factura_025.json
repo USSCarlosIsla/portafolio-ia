@@ -1,44 +1,33 @@
 {
-  "numero_factura": "FE-13545",
-  "fecha_emision": "2025-06-30",
-  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
-  "proveedor_nit": "825097601",
-  "proveedor_dv": "6",
-  "cliente_nombre": "Consorcio Vial 2024",
+  "serie": "F001",
+  "correlativo": "00046709",
+  "fecha_emision": "2027-08-11",
+  "emisor_ruc": "20802507004",
+  "emisor_razon_social": "Materiales Andinos E.I.R.L.",
+  "cliente_ruc": "20035105621",
+  "cliente_razon_social": "Inversiones Altamira S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 2.0,
-      "precio_unitario": 29700.0,
-      "total_linea": 59400.0
+      "descripcion": "Piedra grande de 8\"",
+      "cantidad": 47.0,
+      "valor_unitario": 62.15,
+      "valor_venta": 2921.05
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 24.0,
-      "precio_unitario": 57500.0,
-      "total_linea": 1380000.0
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 15.0,
+      "valor_unitario": 5.9,
+      "valor_venta": 88.5
     },
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 31.0,
-      "precio_unitario": 104600.0,
-      "total_linea": 3242600.0
-    },
-    {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 500.0,
-      "precio_unitario": 3400.0,
-      "total_linea": 1700000.0
-    },
-    {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 21.0,
-      "precio_unitario": 91000.0,
-      "total_linea": 1911000.0
+      "descripcion": "Alambre negro recocido #16",
+      "cantidad": 43.0,
+      "valor_unitario": 6.02,
+      "valor_venta": 258.86
     }
   ],
-  "subtotal": 8293000.0,
-  "iva": 1575670.0,
-  "total": 9868670.0,
-  "moneda": "COP"
+  "op_gravada": 3268.41,
+  "igv": 588.31,
+  "importe_total": 3856.72
 }

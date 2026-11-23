@@ -1,32 +1,33 @@
 {
-  "numero_factura": "FE-10618",
-  "fecha_emision": "2025-07-07",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "838967366",
-  "proveedor_dv": "0",
-  "cliente_nombre": "Juan Pérez Rodríguez",
+  "serie": "F001",
+  "correlativo": "00003500",
+  "fecha_emision": "2026-05-08",
+  "emisor_ruc": "20399161518",
+  "emisor_razon_social": "Ferretería El Constructor S.A.C.",
+  "cliente_ruc": "10032173000",
+  "cliente_razon_social": "Arquitectura & Diseño E.I.R.L.",
+  "moneda": "USD",
   "lineas": [
     {
-      "descripcion": "Ladrillo tolete (und)",
-      "cantidad": 500.0,
-      "precio_unitario": 800.0,
-      "total_linea": 400000.0
+      "descripcion": "Imprimante para muros",
+      "cantidad": 3.0,
+      "valor_unitario": 6.2,
+      "valor_venta": 18.6
     },
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 5.0,
-      "precio_unitario": 87900.0,
-      "total_linea": 439500.0
+      "descripcion": "Clavos para madera c/c 3\"",
+      "cantidad": 41.0,
+      "valor_unitario": 1.71,
+      "valor_venta": 70.11
     },
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 9.0,
-      "precio_unitario": 33200.0,
-      "total_linea": 298800.0
+      "descripcion": "Arena fina",
+      "cantidad": 35.0,
+      "valor_unitario": 15.08,
+      "valor_venta": 527.8
     }
   ],
-  "subtotal": 1138300.0,
-  "iva": 216277.0,
-  "total": 1354577.0,
-  "moneda": "COP"
+  "op_gravada": 616.51,
+  "igv": 110.97,
+  "importe_total": 727.48
 }

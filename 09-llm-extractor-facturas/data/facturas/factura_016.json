@@ -1,50 +1,39 @@
 {
-  "numero_factura": "F-65431",
-  "fecha_emision": "2025-05-25",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "828976851",
-  "proveedor_dv": "3",
-  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "serie": "E001",
+  "correlativo": "00022904",
+  "fecha_emision": "2026-09-11",
+  "emisor_ruc": "20758257178",
+  "emisor_razon_social": "Materiales Andinos E.I.R.L.",
+  "cliente_ruc": "20079703410",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 35.0,
-      "precio_unitario": 90000.0,
-      "total_linea": 3150000.0
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 18.0,
+      "valor_unitario": 5.79,
+      "valor_venta": 104.22
     },
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 7.0,
-      "precio_unitario": 32900.0,
-      "total_linea": 230300.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 250.0,
+      "valor_unitario": 4.48,
+      "valor_venta": 1120.0
     },
     {
-      "descripcion": "Ladrillo tolete (und)",
-      "cantidad": 1000.0,
-      "precio_unitario": 700.0,
-      "total_linea": 700000.0
+      "descripcion": "Arena gruesa",
+      "cantidad": 29.0,
+      "valor_unitario": 66.38,
+      "valor_venta": 1925.02
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 37.0,
-      "precio_unitario": 58600.0,
-      "total_linea": 2168200.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 28.0,
-      "precio_unitario": 179200.0,
-      "total_linea": 5017600.0
-    },
-    {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 32.0,
-      "precio_unitario": 224500.0,
-      "total_linea": 7184000.0
+      "descripcion": "Pintura látex",
+      "cantidad": 12.0,
+      "valor_unitario": 50.39,
+      "valor_venta": 604.68
     }
   ],
-  "subtotal": 18450100.0,
-  "iva": 3505519.0,
-  "total": 21955619.0,
-  "moneda": "COP"
+  "op_gravada": 3753.92,
+  "igv": 675.71,
+  "importe_total": 4429.63
 }

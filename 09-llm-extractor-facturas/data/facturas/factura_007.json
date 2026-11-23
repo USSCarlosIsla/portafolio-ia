@@ -1,38 +1,33 @@
 {
-  "numero_factura": "F-85157",
-  "fecha_emision": "2024-12-31",
-  "proveedor_nombre": "Aceros y Concretos del Norte S.A.",
-  "proveedor_nit": "821737107",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "serie": "F001",
+  "correlativo": "00098191",
+  "fecha_emision": "2027-05-22",
+  "emisor_ruc": "20765823693",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "20224555157",
+  "cliente_razon_social": "Arquitectura & Diseño E.I.R.L.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 12.0,
-      "precio_unitario": 210900.0,
-      "total_linea": 2530800.0
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 3.0,
+      "valor_unitario": 76.19,
+      "valor_venta": 228.57
     },
     {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 1000.0,
-      "precio_unitario": 3500.0,
-      "total_linea": 3500000.0
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 17.0,
+      "valor_unitario": 31.19,
+      "valor_venta": 530.23
     },
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 27.0,
-      "precio_unitario": 32700.0,
-      "total_linea": 882900.0
-    },
-    {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 33.0,
-      "precio_unitario": 67000.0,
-      "total_linea": 2211000.0
+      "descripcion": "Pintura látex",
+      "cantidad": 24.0,
+      "valor_unitario": 51.46,
+      "valor_venta": 1235.04
     }
   ],
-  "subtotal": 9124700.0,
-  "iva": 1733693.0,
-  "total": 10858393.0,
-  "moneda": "COP"
+  "op_gravada": 1993.84,
+  "igv": 358.89,
+  "importe_total": 2352.73
 }

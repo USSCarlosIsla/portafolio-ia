@@ -1,26 +1,51 @@
 {
-  "numero_factura": "FE-58652",
-  "fecha_emision": "2025-03-17",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "856647466",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Juan Pérez Rodríguez",
+  "serie": "F001",
+  "correlativo": "00015964",
+  "fecha_emision": "2027-01-29",
+  "emisor_ruc": "20419538435",
+  "emisor_razon_social": "Eléctricos Volta S.A.C.",
+  "cliente_ruc": "20184535743",
+  "cliente_razon_social": "Arquitectura & Diseño E.I.R.L.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 5.0,
-      "precio_unitario": 28800.0,
-      "total_linea": 144000.0
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 2.0,
+      "valor_unitario": 5.79,
+      "valor_venta": 11.58
     },
     {
-      "descripcion": "Malla electrosoldada 6 m",
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 100.0,
+      "valor_unitario": 1.12,
+      "valor_venta": 112.0
+    },
+    {
+      "descripcion": "Alambre negro recocido #16",
       "cantidad": 27.0,
-      "precio_unitario": 155200.0,
-      "total_linea": 4190400.0
+      "valor_unitario": 6.09,
+      "valor_venta": 164.43
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 19.0,
+      "valor_unitario": 83.02,
+      "valor_venta": 1577.38
+    },
+    {
+      "descripcion": "Clavos para madera c/c 3\"",
+      "cantidad": 43.0,
+      "valor_unitario": 5.71,
+      "valor_venta": 245.53
+    },
+    {
+      "descripcion": "Arena fina",
+      "cantidad": 35.0,
+      "valor_unitario": 55.93,
+      "valor_venta": 1957.55
     }
   ],
-  "subtotal": 4334400.0,
-  "iva": 823536.0,
-  "total": 5157936.0,
-  "moneda": "COP"
+  "op_gravada": 4068.47,
+  "igv": 732.32,
+  "importe_total": 4800.79
 }

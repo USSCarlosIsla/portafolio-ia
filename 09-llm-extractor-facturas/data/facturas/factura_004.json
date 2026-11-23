@@ -1,38 +1,27 @@
 {
-  "numero_factura": "F-15453",
-  "fecha_emision": "2024-08-13",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "866123086",
-  "proveedor_dv": "3",
-  "cliente_nombre": "Inversiones Altamira",
+  "serie": "E001",
+  "correlativo": "00074681",
+  "fecha_emision": "2026-06-23",
+  "emisor_ruc": "20302258415",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "20207698459",
+  "cliente_razon_social": "Edificaciones Modernas S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 32.0,
-      "precio_unitario": 32800.0,
-      "total_linea": 1049600.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 45.0,
+      "valor_unitario": 7.33,
+      "valor_venta": 329.85
     },
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 22.0,
-      "precio_unitario": 122700.0,
-      "total_linea": 2699400.0
-    },
-    {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 13.0,
-      "precio_unitario": 128000.0,
-      "total_linea": 1664000.0
-    },
-    {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 2.0,
-      "precio_unitario": 227900.0,
-      "total_linea": 455800.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 250.0,
+      "valor_unitario": 4.18,
+      "valor_venta": 1045.0
     }
   ],
-  "subtotal": 5868800.0,
-  "iva": 1115072.0,
-  "total": 6983872.0,
-  "moneda": "COP"
+  "op_gravada": 1374.85,
+  "igv": 247.47,
+  "importe_total": 1622.32
 }

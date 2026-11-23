@@ -1,32 +1,51 @@
 {
-  "numero_factura": "FE-91761",
-  "fecha_emision": "2025-02-04",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "809395818",
-  "proveedor_dv": "7",
-  "cliente_nombre": "Consorcio Vial 2024",
+  "serie": "F001",
+  "correlativo": "00052667",
+  "fecha_emision": "2027-03-04",
+  "emisor_ruc": "20503008913",
+  "emisor_razon_social": "Materiales Andinos E.I.R.L.",
+  "cliente_ruc": "20934421761",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 23.0,
-      "precio_unitario": 31600.0,
-      "total_linea": 726800.0
+      "descripcion": "Pintura látex",
+      "cantidad": 54.0,
+      "valor_unitario": 48.51,
+      "valor_venta": 2619.54
     },
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 12.0,
-      "precio_unitario": 15500.0,
-      "total_linea": 186000.0
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 52.0,
+      "valor_unitario": 32.24,
+      "valor_venta": 1676.48
     },
     {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 1000.0,
-      "precio_unitario": 2800.0,
-      "total_linea": 2800000.0
+      "descripcion": "Imprimante para muros",
+      "cantidad": 52.0,
+      "valor_unitario": 22.09,
+      "valor_venta": 1148.68
+    },
+    {
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 36.0,
+      "valor_unitario": 6.48,
+      "valor_venta": 233.28
+    },
+    {
+      "descripcion": "Piedra grande de 8\"",
+      "cantidad": 41.0,
+      "valor_unitario": 64.63,
+      "valor_venta": 2649.83
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 54.0,
+      "valor_unitario": 81.46,
+      "valor_venta": 4398.84
     }
   ],
-  "subtotal": 3712800.0,
-  "iva": 705432.0,
-  "total": 4418232.0,
-  "moneda": "COP"
+  "op_gravada": 12726.65,
+  "igv": 2290.8,
+  "importe_total": 15017.45
 }

@@ -1,57 +1,58 @@
-"""Genera facturas sintéticas (PNG) + su verdad de referencia (JSON) para evaluar extractores.
+"""Genera facturas electrónicas peruanas sintéticas (PNG = representación impresa) + verdad (JSON).
 
-La variedad es a propósito: 3 diseños, varios formatos de fecha, de números (1.234.567 vs 1,234,567.00)
-y de NIT, rotación, ruido y desenfoque. Es lo que rompe a las reglas fijas (regex) y donde un LLM brilla.
+La variedad es a propósito: 3 diseños, formatos de fecha (17/03/2027, 2027-03-17, 17-mar-2027), de
+moneda (S/ 1,234.56 · S/. 1234.56 · US$ 1,234.56), etiquetas distintas ("OP. GRAVADA" / "Valor de venta" /
+"SUBTOTAL"), rotación, ruido y desenfoque. Los RUC son válidos (dígito verificador SUNAT) pero inventados.
+Los productos y precios vienen del catálogo del cotizador de obras (módulo 10), cuando está disponible.
 
 Uso:  python generar_facturas.py --n 30
 """
 import argparse
-import json
 import random
+import sys
 from datetime import date, timedelta
 from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from esquema import Factura, LineaFactura, digito_verificacion_nit
+from esquema import IGV, Factura, LineaFactura, digito_verificador_ruc
 
 DATA_DIR = Path(__file__).resolve().parent / "data" / "facturas"
 FONTS = {"sans": "arial.ttf", "sans_bold": "arialbd.ttf", "mono": "consola.ttf", "serif": "times.ttf"}
 
-PROVEEDORES = ["Ferretería El Constructor S.A.S.", "Materiales Andinos Ltda.", "Depósito La Roca S.A.S.",
-               "Aceros y Concretos del Norte S.A.", "Distribuidora Obra Gris S.A.S.", "Eléctricos Volta Ltda."]
-CLIENTES = ["Constructora Horizonte S.A.S.", "Inversiones Altamira", "Consorcio Vial 2024",
-            "Juan Pérez Rodríguez", "Edificaciones Modernas S.A.", "Arquitectura & Diseño Ltda."]
-PRODUCTOS = [("Cemento gris 50 kg", 32000, 38000), ("Varilla corrugada 1/2\" x 6 m", 28000, 35000),
-             ("Arena lavada (m³)", 85000, 110000), ("Ladrillo tolete (und)", 650, 900),
-             ("Bloque de concreto 15 cm", 2800, 3600), ("Grava triturada (m³)", 95000, 125000),
-             ("Malla electrosoldada 6 m", 145000, 180000), ("Tubo PVC sanitario 4\"", 52000, 68000),
-             ("Cable THHN #12 (rollo 100 m)", 210000, 260000), ("Mano de obra oficial (día)", 120000, 150000),
-             ("Alquiler formaleta (día)", 15000, 22000), ("Impermeabilizante 5 gal", 180000, 240000)]
-MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
-         "octubre", "noviembre", "diciembre"]
+PROVEEDORES = ["Ferretería El Constructor S.A.C.", "Materiales Andinos E.I.R.L.", "Distribuidora La Roca S.A.C.",
+               "Aceros y Concretos del Sur S.A.", "Depósito Obra Gris S.R.L.", "Eléctricos Volta S.A.C."]
+CLIENTES = ["Constructora Horizonte S.A.C.", "Inversiones Altamira S.A.", "Consorcio Vial Lima Norte",
+            "Edificaciones Modernas S.A.C.", "Arquitectura & Diseño E.I.R.L.", "Inmobiliaria Los Pinos S.A."]
+MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "set", "oct", "nov", "dic"]
+
+
+def productos():
+    """(descripción, precio sin IGV) desde el catálogo del cotizador; lista propia si no está."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "10-cotizador-obras"))
+        from catalogo import INSUMOS
+        return [(i.descripcion, i.precio) for i in INSUMOS.values() if i.tipo == "MAT"]
+    except ImportError:
+        return [("Cemento Portland tipo I (42.5 kg)", 30.5), ("Acero corrugado fy=4200 kg/cm²", 4.25),
+                ("Ladrillo King Kong 18 huecos", 1.15), ("Arena gruesa", 62.0), ("Piedra chancada 1/2\"", 78.0)]
+
+
+def ruc_aleatorio(rng, prefijo="20"):
+    base = prefijo + "".join(str(rng.randint(0, 9)) for _ in range(8))
+    return base + digito_verificador_ruc(base)
 
 
 # ---------------- Formatos variados ----------------
-def fmt_dinero(x, estilo):
-    if estilo == "co":
-        return "$ " + f"{x:,.0f}".replace(",", ".")
-    if estilo == "co_dec":
-        return "$" + f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    return f"${x:,.2f}"  # estilo "us"
+def fmt_dinero(x, est):
+    simbolo = "US$" if est["moneda"] == "USD" else est["simbolo"]
+    return f"{simbolo} {x:,.2f}" if est["miles"] else f"{simbolo} {x:.2f}"
 
 
 def fmt_fecha(d, estilo):
-    return {"iso": d.isoformat(), "dmy": d.strftime("%d/%m/%Y"),
-            "largo": f"{d.day} de {MESES[d.month - 1]} de {d.year}",
-            "corto": f"{d.day:02d}-{MESES[d.month - 1][:3]}-{d.year}"}[estilo]
-
-
-def fmt_nit(nit, dv, estilo):
-    puntos = f"{int(nit):,}".replace(",", ".")
-    return {"puntos": f"NIT: {puntos}-{dv}", "plano": f"NIT {nit}-{dv}",
-            "espacios": f"N.I.T. {nit[:3]} {nit[3:6]} {nit[6:]} - {dv}"}[estilo]
+    return {"dmy": d.strftime("%d/%m/%Y"), "iso": d.isoformat(),
+            "corto": f"{d.day:02d}-{MESES[d.month - 1]}-{d.year}"}[estilo]
 
 
 def font(name, size):
@@ -62,109 +63,110 @@ def font(name, size):
 
 
 # ---------------- Datos aleatorios coherentes ----------------
-def factura_aleatoria(rng: random.Random) -> Factura:
-    nit = str(rng.randint(800_000_000, 901_999_999))
+def factura_aleatoria(rng: random.Random, moneda: str) -> Factura:
+    tc = 3.75 if moneda == "USD" else 1.0  # tipo de cambio referencial para facturas en dólares
     lineas = []
-    for nombre, lo, hi in rng.sample(PRODUCTOS, rng.randint(2, 6)):
-        cant = rng.randint(1, 40) if lo > 10000 else rng.choice([100, 250, 500, 1000])
-        precio = round(rng.randint(lo, hi), -2)
-        lineas.append(LineaFactura(descripcion=nombre, cantidad=cant, precio_unitario=precio,
-                                   total_linea=cant * precio))
-    subtotal = sum(l.total_linea for l in lineas)
-    iva = round(subtotal * 0.19)
+    for nombre, precio in rng.sample(productos(), rng.randint(2, 6)):
+        cant = rng.choice([100, 250, 500, 1000]) if precio < 5 else rng.randint(1, 60)
+        vu = round(precio * rng.uniform(0.95, 1.08) / tc, 2)
+        lineas.append(LineaFactura(descripcion=nombre, cantidad=cant, valor_unitario=vu,
+                                   valor_venta=round(cant * vu, 2)))
+    op = round(sum(l.valor_venta for l in lineas), 2)
+    igv = round(op * IGV, 2)
     return Factura(
-        numero_factura=rng.choice(["FE", "FV", "F", "SETT"]) + "-" + str(rng.randint(100, 99999)),
-        fecha_emision=date(2024, 1, 1) + timedelta(days=rng.randint(0, 600)),
-        proveedor_nombre=rng.choice(PROVEEDORES), proveedor_nit=nit, proveedor_dv=digito_verificacion_nit(nit),
-        cliente_nombre=rng.choice(CLIENTES), lineas=lineas, subtotal=subtotal, iva=iva, total=subtotal + iva,
+        serie=rng.choice(["F001", "F002", "FA01", "E001"]), correlativo=f"{rng.randint(1, 99999):08d}",
+        fecha_emision=date(2026, 1, 1) + timedelta(days=rng.randint(0, 600)),
+        emisor_ruc=ruc_aleatorio(rng), emisor_razon_social=rng.choice(PROVEEDORES),
+        cliente_ruc=ruc_aleatorio(rng, rng.choice(["20", "20", "10"])), cliente_razon_social=rng.choice(CLIENTES),
+        moneda=moneda, lineas=lineas, op_gravada=op, igv=igv, importe_total=round(op + igv, 2),
     )
 
 
 # ---------------- Diseños ----------------
+def recuadro_sunat(d, x, y, f, fnt_b, fnt):
+    """El recuadro típico de la representación impresa: RUC, tipo de comprobante y número."""
+    d.rectangle((x, y, x + 400, y + 135), outline=0, width=3)
+    d.text((x + 20, y + 12), f"R.U.C. {f.emisor_ruc}", font=fnt_b, fill=0)
+    d.text((x + 20, y + 50), "FACTURA ELECTRÓNICA", font=fnt_b, fill=0)
+    d.text((x + 20, y + 90), f"{f.serie} - {f.correlativo}", font=fnt, fill=0)
+
+
 def diseno_clasico(f, rng, est):
-    img = Image.new("L", (1100, 1400), 255)
+    img = Image.new("L", (1100, 1450), 255)
     d = ImageDraw.Draw(img)
-    d.text((60, 50), f.proveedor_nombre, font=font("sans_bold", 34), fill=0)
-    d.text((60, 100), fmt_nit(f.proveedor_nit, f.proveedor_dv, est["nit"]), font=font("sans", 24), fill=0)
-    d.text((60, 135), "Calle " + str(rng.randint(10, 150)) + " # " + str(rng.randint(1, 99)) + "-" +
-           str(rng.randint(1, 99)) + ", Bogotá", font=font("sans", 22), fill=60)
-    d.rectangle((640, 50, 1040, 170), outline=0, width=2)
-    d.text((660, 65), "FACTURA ELECTRÓNICA DE VENTA", font=font("sans_bold", 20), fill=0)
-    d.text((660, 100), f"No. {f.numero_factura}", font=font("sans_bold", 28), fill=0)
-    d.text((660, 140), "Fecha: " + fmt_fecha(f.fecha_emision, est["fecha"]), font=font("sans", 20), fill=0)
-    d.text((60, 220), "Cliente: " + f.cliente_nombre, font=font("sans", 24), fill=0)
-    y = 300
-    cols = [60, 600, 720, 900]
+    d.text((60, 50), f.emisor_razon_social, font=font("sans_bold", 32), fill=0)
+    d.text((60, 100), f"Av. {rng.choice(['Argentina', 'Colonial', 'Túpac Amaru', 'Industrial'])} "
+                      f"{rng.randint(100, 3999)} - Lima", font=font("sans", 21), fill=60)
+    recuadro_sunat(d, 640, 40, f, font("sans_bold", 24), font("sans_bold", 26))
+    d.text((60, 210), "Fecha de emisión: " + fmt_fecha(f.fecha_emision, est["fecha"]), font=font("sans", 22), fill=0)
+    d.text((60, 245), "Señor(es): " + f.cliente_razon_social, font=font("sans", 22), fill=0)
+    d.text((60, 280), f"RUC: {f.cliente_ruc}", font=font("sans", 22), fill=0)
+    d.text((640, 210), "Moneda: " + ("SOLES" if f.moneda == "PEN" else "DÓLARES AMERICANOS"),
+           font=font("sans", 22), fill=0)
+    y, cols = 350, [60, 560, 680, 880]
     d.rectangle((50, y - 10, 1050, y + 30), fill=225)
-    for x, h in zip(cols, ["Descripción", "Cant.", "Vr. Unitario", "Vr. Total"]):
-        d.text((x, y), h, font=font("sans_bold", 22), fill=0)
+    for x, h in zip(cols, ["Descripción", "Cant.", "V. Unitario", "V. Venta"]):
+        d.text((x, y), h, font=font("sans_bold", 21), fill=0)
     y += 50
     for l in f.lineas:
-        vals = [l.descripcion, f"{l.cantidad:g}", fmt_dinero(l.precio_unitario, est["dinero"]),
-                fmt_dinero(l.total_linea, est["dinero"])]
-        for x, v in zip(cols, vals):
-            d.text((x, y), v, font=font("sans", 21), fill=0)
-        y += 42
+        for x, v in zip(cols, [l.descripcion[:40], f"{l.cantidad:g}", f"{l.valor_unitario:,.2f}",
+                               f"{l.valor_venta:,.2f}"]):
+            d.text((x, y), v, font=font("sans", 20), fill=0)
+        y += 40
         d.line((50, y - 8, 1050, y - 8), fill=200)
     y += 30
-    for label, v in [("Subtotal", f.subtotal), ("IVA 19%", f.iva), ("TOTAL A PAGAR", f.total)]:
-        d.text((700, y), label, font=font("sans_bold", 23), fill=0)
-        d.text((900, y), fmt_dinero(v, est["dinero"]), font=font("sans_bold", 23), fill=0)
+    for label, v in [("OP. GRAVADA", f.op_gravada), ("I.G.V. 18%", f.igv), ("IMPORTE TOTAL", f.importe_total)]:
+        d.text((640, y), label, font=font("sans_bold", 22), fill=0)
+        d.text((870, y), fmt_dinero(v, est), font=font("sans_bold", 22), fill=0)
         y += 40
-    return img.crop((0, 0, 1100, y + 80))
+    d.text((60, y + 30), "Representación impresa de la Factura Electrónica", font=font("sans", 18), fill=80)
+    return img.crop((0, 0, 1100, y + 90))
 
 
 def diseno_centrado(f, rng, est):
-    img = Image.new("L", (1100, 1400), 255)
+    img = Image.new("L", (1100, 1450), 255)
     d = ImageDraw.Draw(img)
-
-    def centro(y, txt, fnt):
-        w = d.textlength(txt, font=fnt)
-        d.text(((1100 - w) / 2, y), txt, font=fnt, fill=0)
-
-    centro(40, f.proveedor_nombre.upper(), font("serif", 38))
-    centro(95, fmt_nit(f.proveedor_nit, f.proveedor_dv, est["nit"]) + "  ·  Régimen común", font("serif", 24))
-    d.line((80, 140, 1020, 140), fill=0, width=3)
-    d.text((80, 165), f"Factura de venta N° {f.numero_factura}", font=font("serif", 28), fill=0)
-    d.text((680, 165), "Expedida: " + fmt_fecha(f.fecha_emision, est["fecha"]), font=font("serif", 24), fill=0)
-    d.text((80, 215), "Señores: " + f.cliente_nombre, font=font("serif", 26), fill=0)
-    y = 290
-    cols = [80, 190, 700, 870]  # orden de columnas DISTINTO al diseño clásico
-    for x, h in zip(cols, ["Cant", "Concepto", "V/r unit.", "V/r total"]):
-        d.text((x, y), h, font=font("serif", 24), fill=0)
+    w = d.textlength(f.emisor_razon_social.upper(), font=font("serif", 34))
+    d.text(((1100 - w) / 2, 35), f.emisor_razon_social.upper(), font=font("serif", 34), fill=0)
+    recuadro_sunat(d, 350, 95, f, font("serif", 26), font("serif", 26))
+    d.text((80, 260), "Cliente: " + f.cliente_razon_social, font=font("serif", 25), fill=0)
+    d.text((80, 298), f"R.U.C. N° {f.cliente_ruc}", font=font("serif", 25), fill=0)
+    d.text((660, 260), "Emisión: " + fmt_fecha(f.fecha_emision, est["fecha"]), font=font("serif", 24), fill=0)
+    d.text((660, 298), "Moneda: " + f.moneda, font=font("serif", 24), fill=0)
+    y, cols = 370, [80, 190, 700, 880]  # columnas en otro orden
+    for x, h in zip(cols, ["Cant", "Descripción", "Valor unit.", "Importe"]):
+        d.text((x, y), h, font=font("serif", 23), fill=0)
     d.line((80, y + 35, 1020, y + 35), fill=0)
     y += 50
     for l in f.lineas:
-        for x, v in zip(cols, [f"{l.cantidad:g}", l.descripcion, fmt_dinero(l.precio_unitario, est["dinero"]),
-                               fmt_dinero(l.total_linea, est["dinero"])]):
-            d.text((x, y), v, font=font("serif", 23), fill=0)
-        y += 40
+        for x, v in zip(cols, [f"{l.cantidad:g}", l.descripcion[:38], f"{l.valor_unitario:.2f}", f"{l.valor_venta:.2f}"]):
+            d.text((x, y), v, font=font("serif", 22), fill=0)
+        y += 38
     d.line((80, y + 5, 1020, y + 5), fill=0)
     y += 25
-    for label, v in [("Valor bruto:", f.subtotal), ("Impuesto IVA:", f.iva), ("Valor neto:", f.total)]:
-        d.text((620, y), label, font=font("serif", 25), fill=0)
-        d.text((850, y), fmt_dinero(v, est["dinero"]), font=font("serif", 25), fill=0)
+    for label, v in [("Valor de venta:", f.op_gravada), ("IGV (18%):", f.igv), ("Total a pagar:", f.importe_total)]:
+        d.text((600, y), label, font=font("serif", 24), fill=0)
+        d.text((830, y), fmt_dinero(v, est), font=font("serif", 24), fill=0)
         y += 40
-    return img.crop((0, 0, 1100, y + 80))
+    return img.crop((0, 0, 1100, y + 70))
 
 
 def diseno_tirilla(f, rng, est):
-    img = Image.new("L", (760, 1600), 255)
+    img = Image.new("L", (760, 1700), 255)
     d = ImageDraw.Draw(img)
-    fm = font("mono", 22)
-    lines = [f.proveedor_nombre, fmt_nit(f.proveedor_nit, f.proveedor_dv, est["nit"]), "-" * 48,
-             f"FACTURA {f.numero_factura}", fmt_fecha(f.fecha_emision, est["fecha"]),
-             f"CLIENTE: {f.cliente_nombre}", "-" * 48]
+    lines = [f.emisor_razon_social, f"RUC {f.emisor_ruc}", "FACTURA ELECTRONICA", f"{f.serie}-{f.correlativo}",
+             "FECHA: " + fmt_fecha(f.fecha_emision, est["fecha"]), "-" * 48, f"CLIENTE: {f.cliente_razon_social}"[:48],
+             f"RUC: {f.cliente_ruc}", "-" * 48]
     for l in f.lineas:
-        lines.append(l.descripcion[:44])
-        lines.append(f"  {l.cantidad:g} x {fmt_dinero(l.precio_unitario, est['dinero'])}".ljust(30) +
-                     fmt_dinero(l.total_linea, est["dinero"]).rjust(18))
-    lines += ["-" * 48, "SUBTOTAL".ljust(30) + fmt_dinero(f.subtotal, est["dinero"]).rjust(18),
-              "IVA".ljust(30) + fmt_dinero(f.iva, est["dinero"]).rjust(18),
-              "TOTAL".ljust(30) + fmt_dinero(f.total, est["dinero"]).rjust(18), "", "GRACIAS POR SU COMPRA"]
+        lines.append(l.descripcion[:46])
+        lines.append(f"  {l.cantidad:g} x {l.valor_unitario:.2f}".ljust(30) + f"{l.valor_venta:,.2f}".rjust(18))
+    lines += ["-" * 48, "SUBTOTAL".ljust(26) + fmt_dinero(f.op_gravada, est).rjust(22),
+              "IGV 18%".ljust(26) + fmt_dinero(f.igv, est).rjust(22),
+              "TOTAL".ljust(26) + fmt_dinero(f.importe_total, est).rjust(22), "",
+              "Consulte su comprobante en SUNAT"]
     y = 30
     for line in lines:
-        d.text((30, y), line, font=fm, fill=0)
+        d.text((30, y), line, font=font("mono", 22), fill=0)
         y += 32
     return img.crop((0, 0, 760, y + 40))
 
@@ -173,8 +175,8 @@ def degradar(img, rng):
     """Simula una foto/escaneo: rotación leve, desenfoque y ruido."""
     img = img.rotate(rng.uniform(-1.5, 1.5), expand=True, fillcolor=255)
     img = img.filter(ImageFilter.GaussianBlur(rng.uniform(0, 0.9)))
-    arr = np.asarray(img, dtype=float) + np.random.default_rng(rng.randint(0, 10**6)).normal(0, rng.uniform(0, 12), img.size[::-1])
-    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+    ruido = np.random.default_rng(rng.randint(0, 10**6)).normal(0, rng.uniform(0, 12), img.size[::-1])
+    return Image.fromarray(np.clip(np.asarray(img, dtype=float) + ruido, 0, 255).astype(np.uint8))
 
 
 def main():
@@ -184,13 +186,15 @@ def main():
     args = ap.parse_args()
     rng = random.Random(args.seed)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    for viejo in DATA_DIR.glob("factura_*"):
+        viejo.unlink()
     disenos = [diseno_clasico, diseno_centrado, diseno_tirilla]
     for i in range(args.n):
-        f = factura_aleatoria(rng)
-        est = {"dinero": rng.choice(["co", "co_dec", "us"]), "fecha": rng.choice(["iso", "dmy", "largo", "corto"]),
-               "nit": rng.choice(["puntos", "plano", "espacios"])}
-        img = degradar(disenos[i % 3](f, rng, est), rng)
-        img.save(DATA_DIR / f"factura_{i:03d}.png")
+        moneda = "USD" if rng.random() < 0.15 else "PEN"
+        f = factura_aleatoria(rng, moneda)
+        est = {"moneda": moneda, "simbolo": rng.choice(["S/", "S/."]), "miles": rng.random() < 0.7,
+               "fecha": rng.choice(["dmy", "dmy", "iso", "corto"])}
+        degradar(disenos[i % 3](f, rng, est), rng).save(DATA_DIR / f"factura_{i:03d}.png")
         (DATA_DIR / f"factura_{i:03d}.json").write_text(f.model_dump_json(indent=2), encoding="utf-8")
     print(f"{args.n} facturas generadas en {DATA_DIR}")
 

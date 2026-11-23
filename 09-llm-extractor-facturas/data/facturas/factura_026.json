@@ -1,32 +1,45 @@
 {
-  "numero_factura": "FE-17404",
-  "fecha_emision": "2025-03-06",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "831763590",
-  "proveedor_dv": "2",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "F002",
+  "correlativo": "00081507",
+  "fecha_emision": "2027-06-11",
+  "emisor_ruc": "20215323022",
+  "emisor_razon_social": "Eléctricos Volta S.A.C.",
+  "cliente_ruc": "10821691970",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Bloque de concreto 15 cm",
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 52.0,
+      "valor_unitario": 31.89,
+      "valor_venta": 1658.28
+    },
+    {
+      "descripcion": "Hormigón",
+      "cantidad": 44.0,
+      "valor_unitario": 60.42,
+      "valor_venta": 2658.48
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 49.0,
+      "valor_unitario": 74.53,
+      "valor_venta": 3651.97
+    },
+    {
+      "descripcion": "Ladrillo King Kong 18 huecos",
       "cantidad": 100.0,
-      "precio_unitario": 2900.0,
-      "total_linea": 290000.0
+      "valor_unitario": 1.15,
+      "valor_venta": 115.0
     },
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 39.0,
-      "precio_unitario": 95700.0,
-      "total_linea": 3732300.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 26.0,
-      "precio_unitario": 150100.0,
-      "total_linea": 3902600.0
+      "descripcion": "Alambre negro recocido #16",
+      "cantidad": 25.0,
+      "valor_unitario": 6.03,
+      "valor_venta": 150.75
     }
   ],
-  "subtotal": 7924900.0,
-  "iva": 1505731.0,
-  "total": 9430631.0,
-  "moneda": "COP"
+  "op_gravada": 8234.48,
+  "igv": 1482.21,
+  "importe_total": 9716.69
 }

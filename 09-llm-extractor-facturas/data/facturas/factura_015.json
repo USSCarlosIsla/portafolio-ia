@@ -1,26 +1,51 @@
 {
-  "numero_factura": "FV-47091",
-  "fecha_emision": "2024-04-27",
-  "proveedor_nombre": "Ferretería El Constructor S.A.S.",
-  "proveedor_nit": "856779209",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Arquitectura & Diseño Ltda.",
+  "serie": "E001",
+  "correlativo": "00086927",
+  "fecha_emision": "2026-02-17",
+  "emisor_ruc": "20290611262",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "10629645131",
+  "cliente_razon_social": "Edificaciones Modernas S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 17.0,
-      "precio_unitario": 114200.0,
-      "total_linea": 1941400.0
+      "descripcion": "Alambre negro recocido #16",
+      "cantidad": 35.0,
+      "valor_unitario": 6.36,
+      "valor_venta": 222.6
     },
     {
-      "descripcion": "Ladrillo tolete (und)",
+      "descripcion": "Piedra grande de 8\"",
+      "cantidad": 11.0,
+      "valor_unitario": 59.94,
+      "valor_venta": 659.34
+    },
+    {
+      "descripcion": "Arena gruesa",
+      "cantidad": 10.0,
+      "valor_unitario": 66.52,
+      "valor_venta": 665.2
+    },
+    {
+      "descripcion": "Madera tornillo",
+      "cantidad": 52.0,
+      "valor_unitario": 6.66,
+      "valor_venta": 346.32
+    },
+    {
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
       "cantidad": 250.0,
-      "precio_unitario": 800.0,
-      "total_linea": 200000.0
+      "valor_unitario": 4.17,
+      "valor_venta": 1042.5
+    },
+    {
+      "descripcion": "Imprimante para muros",
+      "cantidad": 12.0,
+      "valor_unitario": 21.73,
+      "valor_venta": 260.76
     }
   ],
-  "subtotal": 2141400.0,
-  "iva": 406866.0,
-  "total": 2548266.0,
-  "moneda": "COP"
+  "op_gravada": 3196.72,
+  "igv": 575.41,
+  "importe_total": 3772.13
 }

@@ -1,44 +1,39 @@
 {
-  "numero_factura": "FV-39232",
-  "fecha_emision": "2024-04-27",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "833280314",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Consorcio Vial 2024",
+  "serie": "F002",
+  "correlativo": "00076828",
+  "fecha_emision": "2027-06-30",
+  "emisor_ruc": "20522509095",
+  "emisor_razon_social": "Materiales Andinos E.I.R.L.",
+  "cliente_ruc": "20544576969",
+  "cliente_razon_social": "Inversiones Altamira S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 6.0,
-      "precio_unitario": 110800.0,
-      "total_linea": 664800.0
+      "descripcion": "Alambre negro recocido #16",
+      "cantidad": 34.0,
+      "valor_unitario": 6.16,
+      "valor_venta": 209.44
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
+      "descripcion": "Pintura látex",
+      "cantidad": 54.0,
+      "valor_unitario": 51.66,
+      "valor_venta": 2789.64
+    },
+    {
+      "descripcion": "Arena fina",
       "cantidad": 14.0,
-      "precio_unitario": 229300.0,
-      "total_linea": 3210200.0
+      "valor_unitario": 53.08,
+      "valor_venta": 743.12
     },
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 1.0,
-      "precio_unitario": 107900.0,
-      "total_linea": 107900.0
-    },
-    {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 29.0,
-      "precio_unitario": 220500.0,
-      "total_linea": 6394500.0
-    },
-    {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 30.0,
-      "precio_unitario": 52100.0,
-      "total_linea": 1563000.0
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 500.0,
+      "valor_unitario": 1.21,
+      "valor_venta": 605.0
     }
   ],
-  "subtotal": 11940400.0,
-  "iva": 2268676.0,
-  "total": 14209076.0,
-  "moneda": "COP"
+  "op_gravada": 4347.2,
+  "igv": 782.5,
+  "importe_total": 5129.7
 }

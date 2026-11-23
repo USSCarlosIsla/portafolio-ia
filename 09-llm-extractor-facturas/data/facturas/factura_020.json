@@ -1,44 +1,45 @@
 {
-  "numero_factura": "FV-2751",
-  "fecha_emision": "2024-02-03",
-  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
-  "proveedor_nit": "864603074",
-  "proveedor_dv": "8",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "FA01",
+  "correlativo": "00007470",
+  "fecha_emision": "2026-06-27",
+  "emisor_ruc": "20394918459",
+  "emisor_razon_social": "Aceros y Concretos del Sur S.A.",
+  "cliente_ruc": "20088697741",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 23.0,
-      "precio_unitario": 98500.0,
-      "total_linea": 2265500.0
+      "descripcion": "Hormigón",
+      "cantidad": 51.0,
+      "valor_unitario": 56.58,
+      "valor_venta": 2885.58
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
+      "descripcion": "Pintura látex",
+      "cantidad": 14.0,
+      "valor_unitario": 49.26,
+      "valor_venta": 689.64
+    },
+    {
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 4.0,
+      "valor_unitario": 6.41,
+      "valor_venta": 25.64
+    },
+    {
+      "descripcion": "Imprimante para muros",
       "cantidad": 3.0,
-      "precio_unitario": 62000.0,
-      "total_linea": 186000.0
+      "valor_unitario": 21.57,
+      "valor_venta": 64.71
     },
     {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 30.0,
-      "precio_unitario": 132700.0,
-      "total_linea": 3981000.0
-    },
-    {
-      "descripcion": "Varilla corrugada 1/2\" x 6 m",
-      "cantidad": 30.0,
-      "precio_unitario": 28400.0,
-      "total_linea": 852000.0
-    },
-    {
-      "descripcion": "Impermeabilizante 5 gal",
-      "cantidad": 7.0,
-      "precio_unitario": 210900.0,
-      "total_linea": 1476300.0
+      "descripcion": "Arena fina",
+      "cantidad": 6.0,
+      "valor_unitario": 58.48,
+      "valor_venta": 350.88
     }
   ],
-  "subtotal": 8760800.0,
-  "iva": 1664552.0,
-  "total": 10425352.0,
-  "moneda": "COP"
+  "op_gravada": 4016.45,
+  "igv": 722.96,
+  "importe_total": 4739.41
 }

@@ -1,38 +1,27 @@
 {
-  "numero_factura": "F-61820",
-  "fecha_emision": "2024-04-03",
-  "proveedor_nombre": "Materiales Andinos Ltda.",
-  "proveedor_nit": "884930159",
-  "proveedor_dv": "1",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "FA01",
+  "correlativo": "00021271",
+  "fecha_emision": "2027-02-19",
+  "emisor_ruc": "20547604840",
+  "emisor_razon_social": "Depósito Obra Gris S.R.L.",
+  "cliente_ruc": "20089840768",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 27.0,
-      "precio_unitario": 15100.0,
-      "total_linea": 407700.0
+      "descripcion": "Agua puesta en obra",
+      "cantidad": 23.0,
+      "valor_unitario": 5.93,
+      "valor_venta": 136.39
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 27.0,
-      "precio_unitario": 257700.0,
-      "total_linea": 6957900.0
-    },
-    {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 21.0,
-      "precio_unitario": 35600.0,
-      "total_linea": 747600.0
-    },
-    {
-      "descripcion": "Malla electrosoldada 6 m",
-      "cantidad": 14.0,
-      "precio_unitario": 169400.0,
-      "total_linea": 2371600.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 250.0,
+      "valor_unitario": 4.29,
+      "valor_venta": 1072.5
     }
   ],
-  "subtotal": 10484800.0,
-  "iva": 1992112.0,
-  "total": 12476912.0,
-  "moneda": "COP"
+  "op_gravada": 1208.89,
+  "igv": 217.6,
+  "importe_total": 1426.49
 }

@@ -18,7 +18,7 @@ from fastapi import Depends, FastAPI, File, HTTPException, Query, Security, Uplo
 from fastapi.security import APIKeyHeader
 from pydantic import BaseModel
 
-from esquema import digito_verificacion_nit
+from esquema import IGV, ruc_valido
 
 load_dotenv(Path(__file__).resolve().parent / ".env")
 
@@ -27,7 +27,7 @@ TIPOS = {"image/png": ".png", "image/jpeg": ".jpg"}
 
 app = FastAPI(
     title="Extractor de Facturas",
-    description="Sube la imagen de una factura y recibe sus datos estructurados y validados.",
+    description="Sube la imagen de una factura electrónica peruana (SUNAT) y recibe sus datos estructurados y validados (RUC, IGV 18%, totales).",
     version="1.0.0",
 )
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
@@ -81,10 +81,15 @@ def _con_ocr(ruta):
 
     d = extraer_factura_ocr(ruta)
     errores = [f"No se encontró el campo '{k}'." for k, v in d.items() if v is None]
-    if None not in (d.get("subtotal"), d.get("iva"), d.get("total")) and abs(d["subtotal"] + d["iva"] - d["total"]) > 1:
-        errores.append("Subtotal + IVA no coincide con el total.")
-    if d.get("proveedor_nit") and d.get("proveedor_dv") and digito_verificacion_nit(d["proveedor_nit"]) != d["proveedor_dv"]:
-        errores.append("El dígito de verificación no corresponde al NIT.")
+    og, igv, tot = d.get("op_gravada"), d.get("igv"), d.get("importe_total")
+    if None not in (og, igv, tot):
+        if abs(og + igv - tot) > 0.05:
+            errores.append("Op. gravada + IGV no coincide con el importe total.")
+        if abs(og * IGV - igv) > max(0.05, 0.01 * igv):
+            errores.append("El IGV no es el 18% de la op. gravada.")
+    for rol in ("emisor_ruc", "cliente_ruc"):
+        if d.get(rol) and not ruc_valido(d[rol]):
+            errores.append(f"{rol}: RUC inválido (dígito verificador SUNAT).")
     datos = {k: (v.isoformat() if hasattr(v, "isoformat") else v) for k, v in d.items()}
     return RespuestaExtraccion(motor="ocr", datos=datos, valida=not errores, errores=errores)
 

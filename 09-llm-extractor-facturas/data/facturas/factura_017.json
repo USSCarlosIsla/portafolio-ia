@@ -1,26 +1,33 @@
 {
-  "numero_factura": "F-94226",
-  "fecha_emision": "2025-04-26",
-  "proveedor_nombre": "Ferretería El Constructor S.A.S.",
-  "proveedor_nit": "843194605",
-  "proveedor_dv": "6",
-  "cliente_nombre": "Constructora Horizonte S.A.S.",
+  "serie": "F001",
+  "correlativo": "00033630",
+  "fecha_emision": "2027-02-12",
+  "emisor_ruc": "20896714547",
+  "emisor_razon_social": "Eléctricos Volta S.A.C.",
+  "cliente_ruc": "20910144856",
+  "cliente_razon_social": "Constructora Horizonte S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 17.0,
-      "precio_unitario": 249500.0,
-      "total_linea": 4241500.0
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 500.0,
+      "valor_unitario": 1.19,
+      "valor_venta": 595.0
     },
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 10.0,
-      "precio_unitario": 97400.0,
-      "total_linea": 974000.0
+      "descripcion": "Pintura látex",
+      "cantidad": 2.0,
+      "valor_unitario": 46.35,
+      "valor_venta": 92.7
+    },
+    {
+      "descripcion": "Hormigón",
+      "cantidad": 57.0,
+      "valor_unitario": 60.14,
+      "valor_venta": 3427.98
     }
   ],
-  "subtotal": 5215500.0,
-  "iva": 990945.0,
-  "total": 6206445.0,
-  "moneda": "COP"
+  "op_gravada": 4115.68,
+  "igv": 740.82,
+  "importe_total": 4856.5
 }

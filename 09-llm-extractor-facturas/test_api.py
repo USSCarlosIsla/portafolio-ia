@@ -41,7 +41,8 @@ def test_extrae_con_ocr():
     assert r.status_code == 200
     body = r.json()
     assert body["motor"] == "ocr"
-    assert body["datos"]["total"] > 0
+    assert body["datos"]["importe_total"] > 0
+    assert len(body["datos"]["emisor_ruc"]) == 11
 
 
 def test_llm_sin_clave_devuelve_503():

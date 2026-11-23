@@ -1,26 +1,33 @@
 {
-  "numero_factura": "FV-39738",
-  "fecha_emision": "2024-10-13",
-  "proveedor_nombre": "Eléctricos Volta Ltda.",
-  "proveedor_nit": "896277616",
-  "proveedor_dv": "7",
-  "cliente_nombre": "Inversiones Altamira",
+  "serie": "F002",
+  "correlativo": "00033671",
+  "fecha_emision": "2026-06-09",
+  "emisor_ruc": "20694711805",
+  "emisor_razon_social": "Ferretería El Constructor S.A.C.",
+  "cliente_ruc": "20204075221",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 40.0,
-      "precio_unitario": 15800.0,
-      "total_linea": 632000.0
+      "descripcion": "Ladrillo King Kong 18 huecos",
+      "cantidad": 100.0,
+      "valor_unitario": 1.14,
+      "valor_venta": 114.0
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 13.0,
-      "precio_unitario": 217800.0,
-      "total_linea": 2831400.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 48.0,
+      "valor_unitario": 7.25,
+      "valor_venta": 348.0
+    },
+    {
+      "descripcion": "Arena fina",
+      "cantidad": 53.0,
+      "valor_unitario": 54.55,
+      "valor_venta": 2891.15
     }
   ],
-  "subtotal": 3463400.0,
-  "iva": 658046.0,
-  "total": 4121446.0,
-  "moneda": "COP"
+  "op_gravada": 3353.15,
+  "igv": 603.57,
+  "importe_total": 3956.72
 }

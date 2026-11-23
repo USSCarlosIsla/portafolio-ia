@@ -1,38 +1,51 @@
 {
-  "numero_factura": "F-73284",
-  "fecha_emision": "2024-11-18",
-  "proveedor_nombre": "Depósito La Roca S.A.S.",
-  "proveedor_nit": "815539647",
-  "proveedor_dv": "6",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "F001",
+  "correlativo": "00097091",
+  "fecha_emision": "2026-07-06",
+  "emisor_ruc": "20489451744",
+  "emisor_razon_social": "Distribuidora La Roca S.A.C.",
+  "cliente_ruc": "20660223453",
+  "cliente_razon_social": "Constructora Horizonte S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 8.0,
-      "precio_unitario": 90100.0,
-      "total_linea": 720800.0
+      "descripcion": "Pintura látex",
+      "cantidad": 35.0,
+      "valor_unitario": 51.22,
+      "valor_venta": 1792.7
     },
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 18.0,
-      "precio_unitario": 22000.0,
-      "total_linea": 396000.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 27.0,
+      "valor_unitario": 7.19,
+      "valor_venta": 194.13
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 2.0,
-      "precio_unitario": 212800.0,
-      "total_linea": 425600.0
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 1000.0,
+      "valor_unitario": 4.5,
+      "valor_venta": 4500.0
     },
     {
-      "descripcion": "Grava triturada (m³)",
-      "cantidad": 3.0,
-      "precio_unitario": 101700.0,
-      "total_linea": 305100.0
+      "descripcion": "Hormigón",
+      "cantidad": 25.0,
+      "valor_unitario": 59.68,
+      "valor_venta": 1492.0
+    },
+    {
+      "descripcion": "Arena fina",
+      "cantidad": 15.0,
+      "valor_unitario": 58.34,
+      "valor_venta": 875.1
+    },
+    {
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 52.0,
+      "valor_unitario": 74.31,
+      "valor_venta": 3864.12
     }
   ],
-  "subtotal": 1847500.0,
-  "iva": 351025.0,
-  "total": 2198525.0,
-  "moneda": "COP"
+  "op_gravada": 12718.05,
+  "igv": 2289.25,
+  "importe_total": 15007.3
 }

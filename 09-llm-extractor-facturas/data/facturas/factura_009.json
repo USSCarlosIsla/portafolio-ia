@@ -1,50 +1,51 @@
 {
-  "numero_factura": "F-41002",
-  "fecha_emision": "2025-04-23",
-  "proveedor_nombre": "Ferretería El Constructor S.A.S.",
-  "proveedor_nit": "853991372",
-  "proveedor_dv": "0",
-  "cliente_nombre": "Juan Pérez Rodríguez",
+  "serie": "E001",
+  "correlativo": "00098624",
+  "fecha_emision": "2026-07-26",
+  "emisor_ruc": "20176430398",
+  "emisor_razon_social": "Materiales Andinos E.I.R.L.",
+  "cliente_ruc": "20376582192",
+  "cliente_razon_social": "Edificaciones Modernas S.A.C.",
+  "moneda": "PEN",
   "lineas": [
     {
-      "descripcion": "Malla electrosoldada 6 m",
+      "descripcion": "Piedra chancada 1/2\"",
+      "cantidad": 6.0,
+      "valor_unitario": 77.83,
+      "valor_venta": 466.98
+    },
+    {
+      "descripcion": "Agua puesta en obra",
       "cantidad": 17.0,
-      "precio_unitario": 155300.0,
-      "total_linea": 2640100.0
+      "valor_unitario": 6.16,
+      "valor_venta": 104.72
     },
     {
-      "descripcion": "Alquiler formaleta (día)",
-      "cantidad": 29.0,
-      "precio_unitario": 19300.0,
-      "total_linea": 559700.0
+      "descripcion": "Pintura látex",
+      "cantidad": 11.0,
+      "valor_unitario": 48.29,
+      "valor_venta": 531.19
     },
     {
-      "descripcion": "Cemento gris 50 kg",
-      "cantidad": 32.0,
-      "precio_unitario": 36600.0,
-      "total_linea": 1171200.0
+      "descripcion": "Madera tornillo",
+      "cantidad": 23.0,
+      "valor_unitario": 6.56,
+      "valor_venta": 150.88
     },
     {
-      "descripcion": "Arena lavada (m³)",
-      "cantidad": 39.0,
-      "precio_unitario": 109800.0,
-      "total_linea": 4282200.0
+      "descripcion": "Arena fina",
+      "cantidad": 53.0,
+      "valor_unitario": 58.42,
+      "valor_venta": 3096.26
     },
     {
-      "descripcion": "Tubo PVC sanitario 4\"",
-      "cantidad": 1.0,
-      "precio_unitario": 66500.0,
-      "total_linea": 66500.0
-    },
-    {
-      "descripcion": "Mano de obra oficial (día)",
-      "cantidad": 3.0,
-      "precio_unitario": 136200.0,
-      "total_linea": 408600.0
+      "descripcion": "Hormigón",
+      "cantidad": 45.0,
+      "valor_unitario": 55.31,
+      "valor_venta": 2488.95
     }
   ],
-  "subtotal": 9128300.0,
-  "iva": 1734377.0,
-  "total": 10862677.0,
-  "moneda": "COP"
+  "op_gravada": 6838.98,
+  "igv": 1231.02,
+  "importe_total": 8070.0
 }

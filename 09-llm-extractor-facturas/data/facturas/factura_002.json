@@ -1,26 +1,33 @@
 {
-  "numero_factura": "F-70916",
-  "fecha_emision": "2024-07-27",
-  "proveedor_nombre": "Distribuidora Obra Gris S.A.S.",
-  "proveedor_nit": "865670960",
-  "proveedor_dv": "8",
-  "cliente_nombre": "Edificaciones Modernas S.A.",
+  "serie": "FA01",
+  "correlativo": "00068393",
+  "fecha_emision": "2026-08-30",
+  "emisor_ruc": "20396947758",
+  "emisor_razon_social": "Ferretería El Constructor S.A.C.",
+  "cliente_ruc": "20917953300",
+  "cliente_razon_social": "Inmobiliaria Los Pinos S.A.",
+  "moneda": "USD",
   "lineas": [
     {
-      "descripcion": "Bloque de concreto 15 cm",
-      "cantidad": 500.0,
-      "precio_unitario": 3500.0,
-      "total_linea": 1750000.0
+      "descripcion": "Arena gruesa",
+      "cantidad": 58.0,
+      "valor_unitario": 17.21,
+      "valor_venta": 998.18
     },
     {
-      "descripcion": "Cable THHN #12 (rollo 100 m)",
-      "cantidad": 8.0,
-      "precio_unitario": 245900.0,
-      "total_linea": 1967200.0
+      "descripcion": "Cemento Portland tipo I (42.5 kg)",
+      "cantidad": 54.0,
+      "valor_unitario": 8.3,
+      "valor_venta": 448.2
+    },
+    {
+      "descripcion": "Acero corrugado fy=4200 kg/cm²",
+      "cantidad": 1000.0,
+      "valor_unitario": 1.2,
+      "valor_venta": 1200.0
     }
   ],
-  "subtotal": 3717200.0,
-  "iva": 706268.0,
-  "total": 4423468.0,
-  "moneda": "COP"
+  "op_gravada": 2646.38,
+  "igv": 476.35,
+  "importe_total": 3122.73
 }
